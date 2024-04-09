@@ -30,4 +30,9 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ScottPlot" Version="4.1.73" />
+    <PackageReference Include="ScottPlot.Avalonia" Version="4.1.73" />
+  </ItemGroup>
+
 </Project>

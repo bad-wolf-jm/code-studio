@@ -9,9 +9,9 @@
   <Styles.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <MergeResourceInclude Source="avares://Metrino.Development.Studio.Library/Controls/CodeEditorControl/Completions/CompletionListBox.axaml" />
-        <MergeResourceInclude Source="avares://Metrino.Development.Studio.Library/Controls/CodeEditorControl/Completions/CompletionTipContentControl.axaml" />
-        <MergeResourceInclude Source="avares://Metrino.Development.Studio.Library/Controls/CodeEditorControl/Completions/CompletionListItems.axaml" />
+        <MergeResourceInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/Completions/CompletionListBox.axaml" />
+        <MergeResourceInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/Completions/CompletionTipContentControl.axaml" />
+        <MergeResourceInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/Completions/CompletionListItems.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Styles.Resources>

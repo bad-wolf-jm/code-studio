@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ScottPlot" Version="4.1.73" />
+    <PackageReference Include="ScottPlot.Avalonia" Version="4.1.73" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Metrino.Development.Core.TreeSitter\Metrino.Development.Core.TreeSitter.csproj" />
   </ItemGroup>
 
