@@ -11,6 +11,6 @@
   
     <Application.Styles>
         <FluentTheme />
-        <StyleInclude Source="avares://Metrino.Development.Studio.Library/App.axaml" />
+        <StyleInclude Source="avares://CodeStudio.Library/App.axaml" />
     </Application.Styles>
 </Application>

@@ -10,20 +10,19 @@
 
   
   <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>
-
-  
-  <ItemGroup>
+    <AvaloniaXaml Remove="Assets\**" />
     <AvaloniaXaml Remove="DEV_SOURCE\**" />
     <AvaloniaXaml Remove="Model\**" />
     <AvaloniaXaml Remove="XAML_Port\**" />
+    <Compile Remove="Assets\**" />
     <Compile Remove="DEV_SOURCE\**" />
     <Compile Remove="Model\**" />
     <Compile Remove="XAML_Port\**" />
+    <EmbeddedResource Remove="Assets\**" />
     <EmbeddedResource Remove="DEV_SOURCE\**" />
     <EmbeddedResource Remove="Model\**" />
     <EmbeddedResource Remove="XAML_Port\**" />
+    <None Remove="Assets\**" />
     <None Remove="DEV_SOURCE\**" />
     <None Remove="Model\**" />
     <None Remove="XAML_Port\**" />
@@ -31,9 +30,13 @@
 
   
   <ItemGroup>
-    <None Remove="Assets\Snippets\ReanalyzeFile.lua" />
     <None Remove="Views\UnitTestDocument.xaml" />
     <None Remove="Views\UnitTests.xaml" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\avalonia-logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
