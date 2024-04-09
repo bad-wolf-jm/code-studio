@@ -70,6 +70,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Controls\MaterialIcon.axaml.cs">
       <DependentUpon>MaterialIcon.axaml</DependentUpon>
     </Compile>

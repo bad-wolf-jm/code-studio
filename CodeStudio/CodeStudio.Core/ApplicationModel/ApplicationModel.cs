@@ -1,6 +1,6 @@
-﻿using LiteDB;
+﻿//using LiteDB;
 using Metrino.Development.UI.ViewModels;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
+//using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,8 +15,8 @@ public class ApplicationModel
     private FileSystem _fileSystem = new FileSystem();
     public FileSystem FileSystem { get { return _fileSystem; } }
 
-    private ILiteDatabase _database;
-    public ILiteDatabase Database { get { return _database; } }
+    //private ILiteDatabase _database;
+    //public ILiteDatabase Database { get { return _database; } }
 
     IBackendServiceProvider _serviceProvider;
     public IBackendServiceProvider ServiceProvider { get { return _serviceProvider; } }

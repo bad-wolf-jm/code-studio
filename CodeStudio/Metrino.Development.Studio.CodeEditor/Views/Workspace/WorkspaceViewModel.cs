@@ -294,29 +294,12 @@ public partial class WorkspaceViewModel : ObservableObject, IDisposable
         WeakReferenceMessenger.Default.Send(new DisplayOverlayMessage(_settings));
     }
 
-    [RelayCommand]
-    async Task DisplayEepromChooser(object parameter)
-    {
-        //var eepromChoser = new EepromSelectorOverlayViewModel(_applicationModel);
-        //await eepromChoser.Initialize();
-        //WeakReferenceMessenger.Default.Send(new DisplayOverlayMessage(eepromChoser));
-    }
-
-    [RelayCommand]
-    async Task DisplayFileDatabase(object parameter)
-    {
-        //await (_fileDatabase as DataFilesViewModel).Initialize();
-        //WeakReferenceMessenger.Default.Send(new DisplayOverlayMessage(_fileDatabase));
-    }
-
     public void Dispose()
     {
         foreach (var document in _documents)
         {
             document.Dispose();
         }
-
-        //_fileDatabase.Dispose();
     }
 
     public bool HandleKeySequence(string keySequence)

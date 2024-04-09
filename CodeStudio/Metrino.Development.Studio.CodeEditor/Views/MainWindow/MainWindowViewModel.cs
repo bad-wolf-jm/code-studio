@@ -308,9 +308,6 @@ public partial class MainWindowViewModel : ObservableObject
             case ":Settings":
                 await Workspace.DisplaySettingsCommand.ExecuteAsync(null);
                 break;
-            case ":TestFiles":
-                await Workspace.DisplayFileDatabaseCommand.ExecuteAsync(null);
-                break;
             case ":Checkout":
                 await Workspace.DisplayOverlayCommand.ExecuteAsync(null);
                 break;
@@ -319,9 +316,6 @@ public partial class MainWindowViewModel : ObservableObject
                 break;
             case ":Run":
                 await Workspace.RunCurrentFileCommand.ExecuteAsync(null);
-                break;
-            case ":Eeprom":
-                await Workspace.DisplayEepromChooserCommand.ExecuteAsync(null);
                 break;
             case ":OpenFolder":
                 break;

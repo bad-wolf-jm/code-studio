@@ -1,11 +1,11 @@
-﻿using Avalonia.Controls;
-using Avalonia.Threading;
+﻿//using Avalonia.Controls;
+//using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using LibGit2Sharp;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.IO;
 using System.Threading;
 
 namespace Metrino.Development.UI.ViewModels;
