@@ -1,0 +1,59 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        xmlns:AvaloniaEditCodeCompletion="clr-namespace:AvaloniaEdit.CodeCompletion;assembly=AvaloniaEdit"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+        x:CompileBindings="False">
+
+  <Design.PreviewWith>
+    <Border/>
+  </Design.PreviewWith>
+
+  <Style Selector="controls|CodeEditorControl AvaloniaEditCodeCompletion|CompletionList">
+    <Setter Property="FontSize" Value="11"/>
+    <Setter Property="BorderBrush" Value="LightGray"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="White">
+          <AvaloniaEditCodeCompletion:CompletionListBox Name="PART_ListBox">
+            <AvaloniaEditCodeCompletion:CompletionListBox.ItemTemplate>
+              <DataTemplate x:DataType="AvaloniaEditCodeCompletion:ICompletionData">
+                <StackPanel Orientation="Horizontal" Margin="0">
+                  <Image Source="{Binding Image}"
+                         Width="16"
+                         Height="16"
+                         Margin="0,0,2,0" />
+                  <ContentPresenter Content="{Binding Content}" />
+                </StackPanel>
+              </DataTemplate>
+            </AvaloniaEditCodeCompletion:CompletionListBox.ItemTemplate>
+          </AvaloniaEditCodeCompletion:CompletionListBox>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+  </Style>
+
+  <Style Selector="controls|CodeEditorControl">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <AvaloniaEdit:TextEditor
+          Name="Editor"
+          ShowLineNumbers="True"
+          FontFamily="JetBrains Mono NL, Cascadia Code,Consolas,Menlo,Monospace"
+          LineNumbersForeground="DarkGray"
+          Margin="0"
+          HorizontalScrollBarVisibility="Auto"
+          VerticalScrollBarVisibility="Auto"
+          FontWeight="Light"
+          FontSize="12">
+        </AvaloniaEdit:TextEditor>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+
+</Styles>

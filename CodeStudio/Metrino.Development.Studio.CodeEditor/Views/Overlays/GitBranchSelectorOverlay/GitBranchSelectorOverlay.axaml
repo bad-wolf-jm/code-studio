@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800"
+             x:CompileBindings="False"
+             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             x:Class="Metrino.Development.Studio.Library.GitBranchSelectorOverlay">
+  <Grid RowDefinitions="35,*"  Width="1000" Height="800">
+    <Border  Grid.Row="0" Background="Black" BorderThickness="2" CornerRadius="3" BorderBrush="Gray" Padding="0,6,0,0" Height="35">
+      <TextPresenter Name="TextPresenterControl"
+                     Text="{Binding FilterText, Mode=TwoWay}"
+                     Margin="7,2"
+                     Foreground="LightGray"
+                     CaretBrush="Gray"
+                     FontSize="12"
+                     CaretIndex="{Binding CaretIndex, Mode=TwoWay}"/>
+    </Border>
+    <Border  Grid.Row="1" Background="Black" BorderThickness="2" CornerRadius="3" BorderBrush="Gray" Margin="0,5,0,0">
+      <ListBox Name="BranchList"
+               ItemsSource="{Binding FilteredInfo}" 
+               Background="Transparent"
+               SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <controls:GitBranchTag />
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </Border>
+  </Grid>
+</UserControl>

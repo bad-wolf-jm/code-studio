@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Metrino.Development.Studio.Library": {
+      "commandName": "Project",
+      "hotReloadEnabled": true
+    }
+  }
+}

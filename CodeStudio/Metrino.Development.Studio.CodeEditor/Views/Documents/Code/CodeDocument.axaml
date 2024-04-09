@@ -1,0 +1,134 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels"
+             xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             x:CompileBindings="False"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+             x:Class="Metrino.Development.Studio.Library.CodeDocumentView"
+             x:DataType="vm:CodeDocumentViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <!--<vm:CodeDocumentViewModel />-->
+  </Design.DataContext>
+
+  <UserControl.KeyBindings>
+    <KeyBinding Gesture="F5" Command="{Binding ExecuteCommand}" />
+    <KeyBinding Gesture="Ctrl + S" Command="{Binding SaveCommand}" />
+  </UserControl.KeyBindings>
+
+
+  <UserControl.Styles>
+    <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+  </UserControl.Styles>
+
+  <Grid ColumnDefinitions="*">
+    <Grid RowDefinitions="*,1,*">
+      <!--<Border Grid.Row="0" Background="#303030" BorderThickness="0,0,0,1" BorderBrush="Gray">
+      <Grid ColumnDefinitions="Auto,*,3*">
+        <Button Grid.Column="0" VerticalAlignment="Stretch" Padding="0,0,7,0" Margin="0" Classes="Flat" Command="{Binding ExecuteCommand}">
+          <StackPanel Orientation="Horizontal">
+            <controls:MaterialIcon Kind="PlayArrow" Width="25" Height="25" Foreground="Green" Background="Transparent"/>
+            <TextBlock Text="RUN" VerticalAlignment="Center"/>
+          </StackPanel>
+        </Button>
+        <ComboBox Grid.Column="2" Margin="0" Padding="10,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                  AutoScrollToSelectedItem="True" FontSize="12"
+                  ItemsSource="{Binding GitBranches.Branches}" SelectedItem="{Binding GitBranches.CurrentBranch, Mode=TwoWay}"/>
+      </Grid>
+    </Border>-->
+      <controls:CodeEditorControl Grid.Row="0"
+                                  CommandMode="{Binding CommandMode}"
+                                  Document="{Binding Document}"
+                                  SaveCommand="{Binding SaveCommand}"
+                                  ExecuteCommand="{Binding ExecuteCommand}" />
+      <GridSplitter Grid.Row="1" Background="Gray" ResizeDirection="Rows" Height="1" MinHeight="1"/>
+      <TabControl Grid.Row="2" Margin="0" SelectedIndex="1">
+        <TabItem Header="PLOTS" FontSize="12" Height="25">
+          <Grid ColumnDefinitions="250,1,*">
+            <Grid Grid.Column="0" RowDefinitions="25, *">
+              <Border Grid.Row="0"  Background="#2e2e2e">
+                <TextBlock Grid.Row="0" Text="GRAPHS" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+              </Border>
+              <ItemsControl Grid.Row="1" ItemsSource="{Binding Plots}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Grid ColumnDefinitions="20,*,20" Margin="5,2">
+                      <ToggleButton Classes="VisibilityToggle" Margin="3" Padding="3" IsChecked="{Binding IsVisible, Mode=TwoWay}"/>
+                      <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#c8c8c8"/>
+                      <Border Grid.Column="2" Background="#44123456" BorderThickness="2" BorderBrush="#FF654321" Width="20" Height="20" CornerRadius="3"/>
+                    </Grid>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Grid>
+            <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" BorderThickness="0" MinWidth="1"/>
+            <controls:PlotControl Grid.Column="2" Title="Hello" XAxisTitle="Distance (km)" YAxisTitle="Power (dB)" PlotElementSource="{Binding Plots}"/>
+          </Grid>
+        </TabItem>
+        <TabItem Header="OUTPUT" FontSize="12" Height="25" Margin="0" Padding="0">
+          <Grid ColumnDefinitions="250,1,*">
+            <Grid Grid.Column="0" RowDefinitions="25, *">
+              <Border Grid.Row="0"  Background="#2e2e2e">
+                <TextBlock Grid.Row="0" Text="OUTPUT" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+              </Border>
+              <DataGrid Grid.Row="1" ItemsSource="{Binding Values}" IsReadOnly="True" CanUserResizeColumns="True" AutoGenerateColumns="False"
+                        GridLinesVisibility="All" RowHeight="25">
+                <DataGrid.Columns>
+                  <DataGridTemplateColumn Header="Name" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate>
+                        <TextBlock Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0"  FontFamily="Consolas"/>
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
+
+                  <DataGridTemplateColumn Header="Value" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                      <DataTemplate>
+                        <TextBlock Grid.Column="1" Text="{Binding Value, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="10,0"  FontFamily="Consolas"/>
+                      </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                  </DataGridTemplateColumn>
+                </DataGrid.Columns>
+              </DataGrid>
+            </Grid>
+            <Border Grid.Column="2" Background="#151515" Margin="0" Padding="0">
+              <AvaloniaEdit:TextEditor
+                Name="ConsoleOut"
+                IsReadOnly="True"
+                Text="Console output"
+                Document="{Binding ConsoleOut}"
+                FontFamily="Consolas"
+                LineNumbersForeground="DarkGray"
+                Foreground="LightGray"
+                Background="Transparent"
+                Margin="5,10,5,10"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Auto"
+                FontWeight="Light"
+                FontSize="12"/>
+            </Border>
+          </Grid>
+        </TabItem>
+      </TabControl>
+    </Grid>
+    <!--<Grid Grid.Column="2" RowDefinitions="20,*">
+      <Border Background="#252525">
+        <TextBlock Text="SNIPPETS" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0"></TextBlock>
+      </Border>
+      <Border Grid.Row="1" Background="#151515">
+        <ListBox Background="Transparent">
+          <controls:CodeSnippet/>
+          <controls:CodeSnippet/>
+          <controls:CodeSnippet/>
+          <controls:CodeSnippet/>
+          <controls:CodeSnippet/>
+        </ListBox>
+      </Border>
+    </Grid>-->
+  </Grid>
+</UserControl>

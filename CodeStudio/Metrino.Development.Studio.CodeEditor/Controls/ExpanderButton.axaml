@@ -1,0 +1,36 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+  <Design.PreviewWith>
+    <controls:ExpanderButton Width="25" Height="25"/>
+  </Design.PreviewWith>
+
+  <Style Selector="controls|ExpanderButton">
+    <Setter Property="Height" Value="{TemplateBinding Height}" />
+    <Setter Property="Width" Value="{TemplateBinding Width}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+          <ToggleButton Background="Transparent" 
+              Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <Style Selector="controls|ExpanderButton /template/ ToggleButton:checked">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <controls:MaterialIcon Kind="ChevronDown" 
+            VerticalAlignment="Center" HorizontalAlignment="Center" 
+            Background="Transparent" Foreground="DarkGray"/>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <Style Selector="controls|ExpanderButton /template/ ToggleButton:unchecked">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <controls:MaterialIcon Kind="ChevronRight" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" Foreground="DarkGray"/>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="using:Metrino.Development.Studio.Library.ViewModels"
+             xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+             xmlns:viewmodels="using:Metrino.Development.Studio.Library.ViewModels"
+             x:DataType="vm:TabChooserViewModel"
+             x:Class="Metrino.Development.Studio.Library.TabChooserOverlay">
+  <!--<Border Background="Black" BorderThickness="2" CornerRadius="3" Width="900" Height="800" BorderBrush="Gray">-->
+  <Grid RowDefinitions="35,*" Width="1000" Height="800">
+    <Border  Grid.Row="0" Background="Black" BorderThickness="2" CornerRadius="3" BorderBrush="Gray" Padding="0,6,0,0" Height="35">
+      <TextPresenter Name="TextPresenterControl"
+                     Text="{Binding FilterText, Mode=TwoWay}"
+                     Margin="7,2"
+                     Foreground="LightGray"
+                     CaretBrush="Gray"
+                     FontSize="12"
+                     CaretIndex="{Binding CaretIndex, Mode=TwoWay}"/>
+    </Border>
+
+    <Border  Grid.Row="1" Background="Black" BorderThickness="2" CornerRadius="3" BorderBrush="Gray" Margin="0,5,0,0">
+
+      <!--<TextBox Grid.Row="0" Text="{Binding FilterText, Mode=TwoWay}" />-->
+      <ListBox Grid.Row="1" Name="DocumentList" ItemsSource="{Binding FilteredInfo}" Background="Transparent" SelectedIndex="{Binding SelectedIndex}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <!--<Border Background="#2d2d2d" Margin="1,0">-->
+            <Grid ColumnDefinitions="20,*,20" Margin="5,0">
+              <controls:MaterialIcon Grid.Column="0" Kind="Code" Width="15" Height="15" VerticalAlignment="Center" Foreground="Gray"/>
+              <TextBlock Grid.Column="1" Text="{Binding Path, DataType={x:Type viewmodels:DocumentViewModelBase}}"
+                 VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="100" FontSize="12"/>
+              <Button Grid.Column="2" Classes="Flat" IsVisible="False" Command="{Binding CloseCommand, DataType={x:Type viewmodels:DocumentViewModelBase}}">
+                <controls:MaterialIcon Kind="Close" Width="15" Height="15" Foreground="Gray"/>
+              </Button>
+              <controls:MaterialIcon Grid.Column="2" Kind="Circle" Width="10" Height="10" Foreground="Gray"
+                  Classes="ModifiedIndicator"/>
+            </Grid>
+            <!--</Border>-->
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </Border>
+  </Grid>
+</UserControl>

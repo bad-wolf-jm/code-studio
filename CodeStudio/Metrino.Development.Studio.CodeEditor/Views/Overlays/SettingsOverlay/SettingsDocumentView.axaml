@@ -1,0 +1,111 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view_models="clr-namespace:Metrino.Development.UI.ViewModels;assembly=Metrino.Development.UI.ViewModels"
+             xmlns:lib_view_models="using:Metrino.Development.Studio.Library.ViewModels"
+             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             xmlns:converters="clr-namespace:Metrino.Development.Studio.Library.Converters"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+             x:Class="Metrino.Development.Studio.Library.SettingsDocumentView">
+  <StackPanel Spacing="20" Margin="10,5" Width="500"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Center"
+              x:DataType="lib_view_models:SettingsDocumentViewModel">
+    <StackPanel>
+      <Grid ColumnDefinitions="*,25" Height="25">
+        <TextBox Grid.Column="0" 
+                 Text="{Binding OtdrRepositoryPath, Mode=TwoWay}" 
+                 FontSize="11"/>
+        <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="OtdrRepositoryPath">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>
+      </Grid>
+      <TextBlock Text="OTDR Repository Path" Foreground="Gray"/>
+    </StackPanel>
+
+    <StackPanel>
+      <Grid ColumnDefinitions="*,25" Height="25">
+        <TextBox Grid.Column="0" 
+                 Text="{Binding OtdrBuildPath, Mode=TwoWay}" 
+                 FontSize="11"/>
+        <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="OtdrBuildPath">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>
+      </Grid>
+      <TextBlock Text="OTDR Build Path" Foreground="Gray"/>
+    </StackPanel>
+
+    <StackPanel>
+      <!--<Grid ColumnDefinitions="*,25" Height="25">-->
+      <ComboBox ItemsSource="{Binding BuildConfigurations}" 
+                SelectedItem="{Binding OtdrBuildConfiguration, Mode=TwoWay}" 
+                HorizontalAlignment="Stretch"/>
+      <!--<TextBox Grid.Column="0" Text="{Binding OtdrBuildConfiguration, Mode=TwoWay}" FontSize="11"/>
+        <Button Grid.Column="1">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>-->
+      <!--</Grid>-->
+      <TextBlock Text="OTDR Build Configuration" Foreground="Gray"/>
+    </StackPanel>
+
+    <!--<StackPanel>
+      <Grid ColumnDefinitions="*,25" Height="25">
+        <TextBox Grid.Column="0" Text="{Binding OtdrTargetFramework, Mode=TwoWay}" FontSize="11"/>
+        <Button Grid.Column="1">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>
+      </Grid>
+      <TextBlock Text="OTDR Target Framework" Foreground="Gray"/>
+    </StackPanel>-->
+    <StackPanel>
+      <!--<Grid ColumnDefinitions="*,25" Height="25">-->
+      <ComboBox ItemsSource="{Binding TargetFrameworks}" 
+                SelectedItem="{Binding OtdrTargetFramework, Mode=TwoWay}" 
+                HorizontalAlignment="Stretch"/>
+      <!--<TextBox Grid.Column="0" Text="{Binding OtdrBuildConfiguration, Mode=TwoWay}" FontSize="11"/>
+        <Button Grid.Column="1">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>-->
+      <!--</Grid>-->
+      <TextBlock Text="OTDR Target Framework" Foreground="Gray"/>
+    </StackPanel>
+
+    <StackPanel>
+      <Grid ColumnDefinitions="*,25" Height="25">
+        <TextBox Grid.Column="0" 
+                 Text="{Binding UnitTestXmlRoot, Mode=TwoWay}" 
+                 FontSize="11"/>
+        <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="UnitTestXmlRoot">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>
+      </Grid>
+      <TextBlock Text="Unit Test XML Location" Foreground="Gray"/>
+    </StackPanel>
+
+    <StackPanel>
+      <Grid ColumnDefinitions="*,25" Height="25">
+        <TextBox Grid.Column="0" 
+                 Text="{Binding LocalTestDataBank, Mode=TwoWay}" 
+                 FontSize="11"/>
+        <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="LocalTestDataBank">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>
+      </Grid>
+      <TextBlock Text="Local Test Data Bank" Foreground="Gray"/>
+    </StackPanel>
+
+    <StackPanel>
+      <Grid ColumnDefinitions="*,25" Height="25">
+        <TextBox Grid.Column="0" 
+                 Text="{Binding RemoteTestDataBank, Mode=TwoWay}" 
+                 FontSize="11"/>
+        <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="RemoteTestDataBank">
+          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+        </Button>
+      </Grid>
+      <TextBlock Text="Remote Test Data Bank" Foreground="Gray"/>
+    </StackPanel>
+  </StackPanel>
+
+</UserControl>

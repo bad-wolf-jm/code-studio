@@ -1,0 +1,33 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:CompileBindings="False"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+  <Design.PreviewWith>
+    <controls:GitBranchTag />
+  </Design.PreviewWith>
+
+  <Style Selector="controls|GitBranchTag">
+    <!-- Set Defaults -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid ColumnDefinitions="40,20,*,50,200,200">
+          <controls:MaterialIcon Grid.Column="0" Kind="Gitlab" Width="25" Height="25" IsVisible="{Binding IsRemote}"/>
+          <controls:MaterialIcon Grid.Column="0" Kind="FolderOutline" Width="25" Height="25" IsVisible="{Binding !IsRemote}"/>
+          <controls:MaterialIcon Grid.Column="1" Kind="Check" Width="15" Height="15" IsVisible="{Binding IsCurrentHead}"/>
+          <controls:TextHighlightControl Grid.Column="2" 
+                                         Text="{Binding Name}" 
+                                         Foreground="Gray"
+                                         HighlightColor="LightGray"
+                                         TextSpans="{Binding TextSpans}"
+                                         FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0"/>
+          <TextBlock  Grid.Column="3" Text="{Binding Diffs}" FontSize="12" Foreground="LightGray" VerticalAlignment="Center" IsVisible="{Binding !IsRemote}" />
+          <TextBlock  Grid.Column="4" Text="{Binding LastCommit}" FontSize="12" VerticalAlignment="Center" Foreground="Gray" />
+          <TextBlock  Grid.Column="5" Text="{Binding LastCommitBy}" FontSize="12" VerticalAlignment="Center"  Foreground="Teal" />
+          <!--<controls:MaterialIcon Grid.Column="3" Kind="BuildOutline" Width="20" Height="20"/>
+          <controls:MaterialIcon Grid.Column="4" Kind="TrashCanOutline" Width="20" Height="20"/>
+          <controls:MaterialIcon Grid.Column="5" Kind="Refresh" Width="20" Height="20"/>-->
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

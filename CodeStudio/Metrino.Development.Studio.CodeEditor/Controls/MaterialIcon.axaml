@@ -1,0 +1,31 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+        xmlns:converters="using:Metrino.Development.Studio.Library.Converters">
+  <Design.PreviewWith>
+    <controls:MaterialIcon Kind="Folder" Width="75" Height="75" Background="DarkSlateGray" Foreground="White"/>
+  </Design.PreviewWith>
+
+  <Styles.Resources>
+    <converters:MaterialIconKindToGeometryConverter x:Key="GeometryConverter" />
+  </Styles.Resources>
+
+  <Style Selector="controls|MaterialIcon">
+    <!--<Setter Property="Height" Value="{TemplateBinding Height}" />
+    <Setter Property="Width" Value="{TemplateBinding Width}" />-->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+          <Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+            <Canvas Width="25" Height="25" >
+              <Path Data="{TemplateBinding Kind, Converter={StaticResource GeometryConverter}}"
+                    Fill="{TemplateBinding Foreground}" />
+            </Canvas>
+          </Viewbox>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

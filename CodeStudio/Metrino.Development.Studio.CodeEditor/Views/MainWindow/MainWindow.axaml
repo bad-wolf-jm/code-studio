@@ -1,0 +1,153 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Metrino.Development.Studio.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Metrino.Development.Studio.Controls"
+        xmlns:ui_vm="using:Metrino.Development.UI.ViewModels"
+        xmlns:ui_core="using:Metrino.Development.UI.Core"
+        xmlns:library_vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels;assembly=CodeStudio.Library"
+        xmlns:library_views="clr-namespace:Metrino.Development.Studio.Library;assembly=CodeStudio.Library"
+        xmlns:library_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Library"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="Metrino.Development.Studio.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        Width="1920"
+        Height="1080"
+        Background="Transparent"
+        TransparencyBackgroundFallback="Transparent"
+        FontFamily="JetBrainsMono Nerd Font, Cascadia Code,Consolas,Menlo,Monospace"
+        FontSize="12"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Metrino">
+  
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
+
+  <!--<Window.KeyBindings>
+    <KeyBinding Gesture="Escape" Command="{Binding DismissOverlayCommand}" />
+    <KeyBinding Gesture="Ctrl+O" Command="{Binding OpenFileCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+O" Command="{Binding OpenFolderCommand}" />
+    <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveCurrentFileCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+A" Command="{Binding SaveCurrentFileAsCommand}" />
+    <KeyBinding Gesture="F5" Command="{Binding RunCurrentFileCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+I" Command="{Binding DisplayInfoOverlayCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+G" Command="{Binding DisplayOverlayCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+S" Command="{Binding DisplaySettingsCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+D" Command="{Binding DisplayFileDatabaseCommand}" />
+    <KeyBinding Gesture="Ctrl+Shift+T" Command="{Binding DisplayTabChooserCommand}" />
+  </Window.KeyBindings>-->
+
+
+  <Border CornerRadius="10" BorderBrush="#78858585" BorderThickness="1">
+    <Grid RowDefinitions="35, *, 25, 25">
+      <Border Grid.Row="0" CornerRadius="10,10,0,0" BorderBrush="#656565" BorderThickness="0,0,0,1"
+              Background="#2b2b2b">
+        <Grid Margin="0" ColumnDefinitions="40,Auto,*,40,40,40">
+          <Border Grid.Column="2"
+                  Grid.ColumnSpan="1"
+                  ZIndex="1"
+                  x:Name="HeaderDragArea"
+                  Background="Transparent"
+                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                  PointerPressed="InputElement_OnPointerPressed"
+                  PointerReleased="InputElement_OnPointerReleased"
+                  PointerMoved="InputElement_OnPointerMoved"></Border>
+          <Label Grid.Column="2"
+                 x:Name="Title"
+                 Content="Development Tool"
+                 Background="Transparent"
+                 VerticalAlignment="Center"
+                 HorizontalContentAlignment="Center" />
+          <Button Grid.Column="3"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent"
+                  Click="MinimizeWindow">
+            <library_controls:MaterialIcon Grid.Column="0" Kind="Minimize" Foreground="White" Width="15" Height="15"></library_controls:MaterialIcon>
+          </Button>
+          <Button Grid.Column="4"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent"
+                  Click="MaximizeWindow">
+            <library_controls:MaterialIcon Grid.Column="0" Kind="SquareRoundedOutline" Foreground="White" Width="15" Height="15"></library_controls:MaterialIcon>
+          </Button>
+          <Button Grid.Column="5"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  CornerRadius="0,10,0,0"
+                  Background="Transparent"
+                  Click="ExitApplication">
+            <library_controls:MaterialIcon Grid.Column="0" Kind="Close" Foreground="White" Width="15" Height="15"></library_controls:MaterialIcon>
+          </Button>
+        </Grid>
+      </Border>
+
+      <Border Grid.Row="1" CornerRadius="0,0,10,10" BorderBrush="#181818" BorderThickness="0,1,0,0" Background="#181818" >
+        <Grid>
+          <Border ZIndex="10" IsVisible="{Binding OverlayVisible}">
+            <Border.Background>
+              <SolidColorBrush Color="#000000" Opacity="0.8"/>
+            </Border.Background>
+            <ContentControl Grid.Row="0" Name="Overlay" DragDrop.AllowDrop="True"
+                Content="{Binding OverlayContent}" x:CompileBindings="False">
+              <ContentControl.DataTemplates>
+                <!--<DataTemplate DataType="{x:Type ui_vm:DataFilesViewModel}">
+                  <library_views:DataFilesView />
+                </DataTemplate>-->
+                <DataTemplate DataType="{x:Type library_vm:SettingsDocumentViewModel}">
+                  <library_views:SettingsDocumentView />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type library_vm:ProjectBuilderDocumentViewModel}">
+                  <library_views:GitBranchSelectorOverlay/>
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type ui_core:MeasurementInformation}">
+                  <library_views:MeasurementInformationView />
+                </DataTemplate>-->
+                <!--<DataTemplate DataType="{x:Type ui_core:OlmAnalysisToken}">
+                  <library_views:OlmAnalysisDialog />
+                </DataTemplate>
+                </DataTemplate>-->
+                <DataTemplate DataType="{x:Type library_vm:TabChooserViewModel}">
+                  <library_views:TabChooserOverlay />
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type library_vm:EepromSelectorOverlayViewModel}">
+                  <library_views:EepromSelectorOverlay />
+                </DataTemplate>-->
+              </ContentControl.DataTemplates>
+            </ContentControl>
+          </Border>
+          <Grid ColumnDefinitions="350,1,*">
+            <library_views:FileTreeView DataContext="{Binding ExplorerViewModel}"/>
+            <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" MinWidth="1"/>
+            <library_views:Workspace Grid.Column="2" DataContext="{Binding Workspace}"/>
+          </Grid>
+        </Grid>
+      </Border>
+      <Border Grid.Row="2" BorderBrush="#656565" BorderThickness="0,1,0,0"
+              Background="#2b2b2b">
+        <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto">
+          <TextBlock Grid.Column="0" Text="--INSERT--" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="12" IsVisible="{Binding !CommandMode}"/>
+          <TextBlock Grid.Column="1" Text="{Binding CurrentPath}" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="12"/>
+          <TextBlock Grid.Column="2" Text="&#xe725;" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="12"/>
+          <TextBlock Grid.Column="3" Text="{Binding CurrentBranch}" VerticalAlignment="Center" Margin="2,0" FontSize="12"/>
+          <TextBlock Grid.Column="4" Text="{Binding CurrentStatus}" VerticalAlignment="Center" Margin="2,0" FontSize="12"/>          
+          <!--<TextBlock Grid.Column="4" Text="{Binding CurrentKeySequence}" VerticalAlignment="Center" Margin="10,0,0,0"/>-->
+        </Grid>
+      </Border>
+      <Border Grid.Row="3" CornerRadius="0,0,10,10" BorderBrush="#656565" BorderThickness="0,1,0,0"
+              Background="#0b0b0b">
+        <TextBox Name="CommandLine" Text="" FontSize="12" BorderBrush="Transparent" BorderThickness="0"/>
+      </Border>
+    </Grid>
+  </Border>
+</Window>

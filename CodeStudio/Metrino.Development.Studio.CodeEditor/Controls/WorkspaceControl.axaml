@@ -1,0 +1,162 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+        xmlns:viewmodels="using:Metrino.Development.Studio.Library.ViewModels">
+  <Design.PreviewWith>
+    <controls:WorkspaceControl />
+  </Design.PreviewWith>
+
+  <!--<Style Selector="controls|WorkspaceControl TabStripItem">
+    <Setter Property="FontSize" Value="11"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="#2d2d2d" Margin="1,0">
+          <Grid ColumnDefinitions="20,*,20" Margin="5,0">
+            <controls:MaterialIcon Grid.Column="0" Kind="Code" Width="15" Height="15" VerticalAlignment="Center" Foreground="Gray"/>
+            <TextBlock Grid.Column="1" Text="{Binding Name, DataType={x:Type viewmodels:DocumentViewModelBase}}"
+               VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="100"/>
+            <Button Grid.Column="2" Classes="Flat" IsVisible="False" Command="{Binding CloseCommand, DataType={x:Type viewmodels:DocumentViewModelBase}}">
+              <controls:MaterialIcon Kind="Close" Width="15" Height="15" Foreground="Gray"/>
+            </Button>
+            <controls:MaterialIcon Grid.Column="2" Kind="Circle" Width="10" Height="10" Foreground="Gray"
+                Classes="ModifiedIndicator"/>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>-->
+
+  <!--<Style Selector="controls|WorkspaceControl TabStripItem:pointerover /template/ Button">
+    <Setter Property="IsVisible" Value="True"/>
+  </Style>
+
+  <Style Selector="controls|WorkspaceControl TabStripItem /template/ controls|MaterialIcon.ModifiedIndicator">
+    <Setter Property="IsVisible" Value="{Binding IsModified, DataType={x:Type viewmodels:DocumentViewModelBase}}"/>
+  </Style>
+
+  <Style Selector="controls|WorkspaceControl TabStripItem:pointerover /template/ controls|MaterialIcon.ModifiedIndicator">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+
+  <Style Selector="controls|WorkspaceControl TabStrip ScrollBar:horizontal">
+    <Setter Property="Height" Value="4" />
+    <Setter Property="HideDelay" Value="0.05" />
+    <Setter Property="ShowDelay" Value="0.05" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid x:Name="Root" Height="4" VerticalAlignment="Bottom">
+          <Border x:Name="HorizontalRoot" VerticalAlignment="Bottom" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+            <Track VerticalAlignment="Bottom"
+                   Height="4"
+                   Minimum="{TemplateBinding Minimum}"
+                   Maximum="{TemplateBinding Maximum}"
+                   Value="{TemplateBinding Value, Mode=TwoWay}"
+                   ViewportSize="{TemplateBinding ViewportSize}"
+                   Orientation="Horizontal">
+              <Thumb Theme="{StaticResource FluentScrollBarThumb}"
+                     Height="4"
+                     MinWidth="4"
+                     CornerRadius="2"
+                     RenderTransform="{DynamicResource HorizontalSmallScrollThumbScaleTransform}"
+                     RenderTransformOrigin="50%,100%" />
+            </Track>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>-->
+
+  <!--<Style Selector="controls|WorkspaceControl TabStrip:pointerover ScrollBar:horizontal">
+    <Setter Property="IsVisible" Value="True"/>
+  </Style>-->
+
+  <!--<Style Selector="controls|WorkspaceControl TabStrip">
+    <Setter Property="FontSize" Value="11"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Padding="{TemplateBinding Padding}">
+          <Grid ColumnDefinitions="*,350,30,30,30,30">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+              <ItemsPresenter Name="PART_ItemsPresenter" ItemsPanel="{TemplateBinding ItemsPanel}"/>
+            </ScrollViewer>
+
+            <Button Grid.Column="3" Classes="Flat" Command="{Binding $parent[controls:WorkspaceControl].SaveCurrent}">
+              <controls:MaterialIcon Kind="FloppyDisk" Width="15" Height="15" Foreground="LightGray"/>
+            </Button>
+            <Button Grid.Column="4" Classes="Flat" Command="{Binding $parent[controls:WorkspaceControl].SaveAll}">
+              <controls:MaterialIcon Kind="FloppyDiscMultipleOutline" Width="15" Height="15" Foreground="LightGray"/>
+            </Button>
+            <Button Grid.Column="5" Classes="Flat">
+              <controls:MaterialIcon Kind="CloseBoxMultipleOutline" Width="15" Height="15" Foreground="LightGray"/>
+            </Button>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+    <Setter Property="ItemsPanel">
+      <ItemsPanelTemplate>
+        <StackPanel Orientation="Horizontal"/>
+      </ItemsPanelTemplate>
+    </Setter>
+  </Style>-->
+
+  <!--<Style Selector="controls|WorkspaceControl controls|PrettyFilePath">
+    <Setter Property="Foreground" Value="LightGray" />
+    <Setter Property="FontSize" Value="10" />
+  </Style>-->
+
+  <Style Selector="controls|WorkspaceControl">
+    <!-- Set Defaults -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Border DragDrop.AllowDrop="True" Background="Transparent">
+            <Grid RowDefinitions="*">
+              <!--<TabStrip Grid.Row="0" ItemsSource="{TemplateBinding ItemsSource}" FontSize="11" SelectedIndex="{TemplateBinding SelectedIndex, Mode=TwoWay}"/>
+              <Border Grid.Row="1" Background="#262626">
+                <controls:PrettyFilePath Path="{TemplateBinding SelectedPath}"/>
+              </Border>-->
+              <Grid RowDefinitions="*,Auto,*" Grid.Row="2" IsVisible="{Binding SelectedDocument.IsLoading, RelativeSource={RelativeSource TemplatedParent} }">
+                <TextBlock Grid.Row="1" Text="Loading..." FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" Foreground="SlateGray"/>
+              </Grid>
+              <ContentControl Name="Documents" Grid.Row="2"  DragDrop.AllowDrop="True"
+                 Content="{Binding SelectedDocument.Document, RelativeSource={RelativeSource TemplatedParent}}"
+                 IsVisible="{Binding !SelectedDocument.IsLoading, RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Grid>
+          </Border>
+          <Border Background="Black" Opacity="0.95" IsVisible="{TemplateBinding ShowOverlay}" VerticalAlignment="Stretch">
+            <ContentControl Grid.Row="0" Name="Overlay0" DragDrop.AllowDrop="True"
+               Content="{Binding OverlayContent.Document, RelativeSource={RelativeSource TemplatedParent}}"/>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <Style Selector="controls|WorkspaceControl:isempty">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Border DragDrop.AllowDrop="True" Background="Transparent">
+            <Grid RowDefinitions="*,Auto,Auto,*">
+              <Border Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+              <TextBlock Grid.Row="1" Text="No opened documents" FontSize="25" FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="10" Foreground="SlateGray"/>
+              <TextBlock Grid.Row="2" Text="Select a document to open, or drag from filesystem" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="10" Foreground="SlateGray"/>
+              <Border Grid.Row="3"/>
+            </Grid>
+          </Border>
+          <Border Background="Black" Opacity="0.95" IsVisible="{TemplateBinding ShowOverlay}" VerticalAlignment="Stretch">
+            <ContentControl Grid.Row="0" Name="Overlay1" DragDrop.AllowDrop="True"
+               Content="{Binding OverlayContent.Document, RelativeSource={RelativeSource TemplatedParent}}"/>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+</Styles>

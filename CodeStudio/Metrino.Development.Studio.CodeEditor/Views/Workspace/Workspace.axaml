@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:ce="clr-namespace:Metrino.Development.Studio.Library"
+             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             xmlns:library_vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels"
+             xmlns:ui_vm="using:Metrino.Development.UI.ViewModels"
+             xmlns:core="using:Metrino.Development.UI.Core"
+             x:Class="Metrino.Development.Studio.Library.Workspace">
+
+  <controls:WorkspaceControl Grid.Column="2"
+      ItemsSource="{Binding Documents, DataType={x:Type library_vm:WorkspaceViewModel}}"
+      SelectedIndex="{Binding ActiveDocument, Mode=TwoWay, DataType={x:Type library_vm:WorkspaceViewModel}}"
+      RunCurrent="{Binding RunCurrentFileCommand, DataType={x:Type library_vm:WorkspaceViewModel}}"
+      SaveAll="{Binding SaveAllFilesCommand, DataType={x:Type library_vm:WorkspaceViewModel}}"
+      SaveCurrent="{Binding SaveCurrentFileCommand, DataType={x:Type library_vm:WorkspaceViewModel}}"
+      OverlayContent="{Binding OverlayContent, DataType={x:Type library_vm:WorkspaceViewModel}}"
+                             >
+    <controls:WorkspaceControl.DataTemplates>
+      <DataTemplate DataType="{x:Type library_vm:CodeDocumentViewModel}">
+        <ce:CodeDocumentView />
+      </DataTemplate>
+      <!--<DataTemplate DataType="{x:Type library_vm:OlmDocumentViewModel}">
+        <ce:OlmDocumentView />
+      </DataTemplate>
+      <DataTemplate DataType="{x:Type library_vm:OtdrDocumentViewModel}">
+        <ce:OtdrDocumentView />
+      </DataTemplate>
+      <DataTemplate DataType="{x:Type ui_vm:UnitTestDocumentViewModel}">
+        <ce:UnitTestDocument />
+      </DataTemplate>-->
+    </controls:WorkspaceControl.DataTemplates>
+  </controls:WorkspaceControl>
+
+</UserControl>

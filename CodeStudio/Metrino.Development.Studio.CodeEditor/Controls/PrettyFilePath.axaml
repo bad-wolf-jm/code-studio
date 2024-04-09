@@ -1,0 +1,35 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="using:System"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+  <Design.PreviewWith>
+    <controls:PrettyFilePath />
+  </Design.PreviewWith>
+
+  <Style Selector="controls|PrettyFilePath StackPanel">
+    <Setter Property="Spacing" Value="0"/>
+  </Style>
+  
+  <Style Selector="controls|PrettyFilePath">
+    <!-- Set Defaults -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ItemsControl ItemsSource="{TemplateBinding PathComponents}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="0" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Grid ColumnDefinitions="15,*">
+                <controls:MaterialIcon Grid.Column="0" Kind="ChevronRight" Width="15" Height="15" Foreground="Gray" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="{Binding DataType={x:Type sys:String}}" VerticalAlignment="Center" Margin="0" Padding="0"/>
+              </Grid>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

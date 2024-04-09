@@ -1,0 +1,34 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+  <Design.PreviewWith>
+    <!--<controls:TitleFrame />-->
+  </Design.PreviewWith>
+
+  <Style Selector="controls|TitleFrame">
+    <!-- Set Defaults -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Grid.Row="5"
+                Padding="0"
+                Margin="10,3,10,2"
+                BorderThickness="1"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                CornerRadius="2">
+          <Grid RowDefinitions="Auto,Auto">
+            <Border Grid.Row="0"
+                    Background="{TemplateBinding BorderBrush}"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Padding="0,7">
+              <TextBlock Text="{TemplateBinding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="1" Margin="10,1" Background="Transparent">
+              <ContentPresenter Content="{TemplateBinding Content}" Padding="0"/>
+            </Border>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

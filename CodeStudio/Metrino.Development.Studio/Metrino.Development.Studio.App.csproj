@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Models\" />
+        <AvaloniaResource Include="Assets\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.0.5" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.6" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.6" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.6" />
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.6" />
+        <PackageReference Include="AvaloniaEdit.TextMate" Version="11.0.5" />
+        <PackageReference Include="AvaloniaEdit.TextMate.Grammars" Version="0.10.12" />
+        <PackageReference Include="CommunityToolkit.Common" Version="8.2.2" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageReference Include="System.Private.ServiceModel" Version="4.10.2" />
+        <PackageReference Include="System.ServiceModel.Duplex" Version="6.0.0" />
+        <PackageReference Include="System.ServiceModel.Http" Version="6.0.0" />
+        <PackageReference Include="YamlDotNet" Version="13.7.1" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\Metrino.Development.Studio.CodeEditor\CodeStudio.Library.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Reference Include="FontAwesome6.Svg.Net">
+        <HintPath>C:\Users\jmalb\.nuget\packages\fontawesome6.svg\2.5.1\lib\net6.0-windows7.0\FontAwesome6.Svg.Net.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>

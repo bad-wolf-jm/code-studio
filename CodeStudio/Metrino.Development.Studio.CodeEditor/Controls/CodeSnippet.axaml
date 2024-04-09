@@ -1,0 +1,31 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+  <Design.PreviewWith>
+    <controls:CodeSnippet />
+  </Design.PreviewWith>
+
+  <Style Selector="controls|CodeSnippet">
+    <!-- Set Defaults -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border BorderBrush="Gray" CornerRadius="3" BorderThickness="1" Height="250">
+          <Grid RowDefinitions="30,*">
+            <Border BorderBrush="Gray" CornerRadius="3" BorderThickness="0,0,0,1">
+              <Grid Grid.Row="0" ColumnDefinitions="*,30">
+                <TextBlock Grid.Column="0" Text="Title" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0"/>
+                <Button Grid.Column="1" Classes="Flat">
+                  <controls:MaterialIcon 
+                      Kind="ContentCopy"
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      Background="Transparent" Foreground="DarkGray"/>
+                </Button>
+              </Grid>
+            </Border>
+            <controls:CodeEditorControl Grid.Row="1"/>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

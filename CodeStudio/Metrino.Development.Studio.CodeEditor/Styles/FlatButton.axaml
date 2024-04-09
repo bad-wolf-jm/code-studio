@@ -1,0 +1,21 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <Button Classes="Flat">
+        <TextBlock Text="Hello" Foreground="AntiqueWhite"/>
+      </Button>
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+  <Style Selector="Button.Flat /template/ ContentPresenter">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="CornerRadius" Value="0"/>
+  </Style>
+
+  <Style Selector="Button.Flat:pointerover /template/ ContentPresenter">
+    <Setter Property="Background" Value="#11ffffff"/>
+    <Setter Property="CornerRadius" Value="0"/>
+  </Style>
+</Styles>

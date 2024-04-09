@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Metrino.Development.Studio.Test.ViewModels"
+        xmlns:library_vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels;assembly=Metrino.Development.Studio.Library"
+        xmlns:ce="clr-namespace:Metrino.Development.Studio.Library;assembly=Metrino.Development.Studio.Library"
+        xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=Metrino.Development.Studio.Library"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Width="1800" Height="900"
+        FontSize="11"
+        x:Class="Metrino.Development.Studio.Test.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Metrino.Development.Studio.Test">
+
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+    to set the actual DataContext for runtime, set the DataContext 
+    property in code (look at App.axaml.cs) -->
+    <!--<vm:MainWindowViewModel/>-->
+  </Design.DataContext>
+
+  <!--<controls:WorkspaceControl ItemsSource="{Binding Documents}"/>-->
+    <!--<ce:UnitTestDocument DataContext="{Binding UnitTests}"/>-->
+
+   <!--<ce:DataFilesView DataContext="{Binding UnitTestsDataFiles}"/>-->
+  <Grid ColumnDefinitions="*,*">
+    <controls:CodeEditorControl
+      Grid.Column="0" Document="{Binding TestCode.Document}" Completions="{Binding TestCode.CodeCompletions}" />
+    <controls:CodeEditorControl
+      Grid.Column="1" Document="{Binding TestCode.CallbackDocument}" />
+  </Grid>
+
+  <!--<Grid ColumnDefinitions="300,2,*">
+    <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" MinWidth="1"/>
+
+    <controls:WorkspaceControl Grid.Column="2" ItemsSource="{Binding Documents}">
+      <controls:WorkspaceControl.DataTemplates>
+        <DataTemplate DataType="{x:Type library_vm:CodeDocumentViewModel}">
+          <ce:CodeDocumentView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type library_vm:OlmDocumentViewModel}">
+          <ce:OlmDocumentView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type library_vm:OtdrDocumentViewModel}">
+          <ce:OtdrDocumentView />
+        </DataTemplate>
+        </controls:WorkspaceControl.DataTemplates>
+      </controls:WorkspaceControl>-->
+
+
+    <!--<Carousel Grid.Column="2" ItemsSource="{Binding WorkspaceItems}" SelectedIndex="0">
+    </Carousel>-->
+  <!--</Grid>-->
+</Window>

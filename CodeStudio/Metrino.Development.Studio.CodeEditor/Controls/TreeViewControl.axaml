@@ -1,0 +1,102 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+        xmlns:converters="clr-namespace:Metrino.Development.Studio.Library.Converters"
+        xmlns:ViewModels="clr-namespace:Metrino.Development.UI.ViewModels"
+        x:CompileBindings="False">
+
+  <Design.PreviewWith>
+    <Border/>
+  </Design.PreviewWith>
+
+  <Style Selector="controls|TreeViewControl TextBlock">
+    <Setter Property="Foreground" Value="#ffe6e6e6"/>
+  </Style>
+
+  <Style Selector="controls|TreeViewControl TextBlock.Disabled">
+    <Setter Property="Foreground" Value="#33e6e6e6"/>
+  </Style>
+
+  <Style Selector="controls|TreeViewControl controls|MaterialIcon">
+    <Setter Property="Foreground" Value="#ffe6e6e6"/>
+  </Style>
+
+  <Style Selector="controls|TreeViewControl controls|MaterialIcon.Disabled">
+    <Setter Property="Foreground" Value="#33e6e6e6"/>
+  </Style>
+
+  <Style Selector="controls|TreeViewControl">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataGrid
+          Name="internalDataGrid"
+          ItemsSource="{TemplateBinding DisplayedItems}"
+          SelectedIndex="{TemplateBinding SelectedIndex, Mode=TwoWay}"
+          RowHeight="20"
+          IsReadOnly="False"
+          HeadersVisibility="None"
+          GridLinesVisibility="None"
+          CanUserReorderColumns="False"
+          CanUserResizeColumns="False"
+          CanUserSortColumns="False">
+
+          <DataGrid.Resources>
+            <converters:FilenameToIconConverter x:Key="FilenameToIconConverter"/>
+            <converters:TreeLevelToMarginConverter x:Key="TreeLevelToMarginConverter" Indent="15"/>
+            <SolidColorBrush x:Key="DataGridGridLinesBrush" Opacity="0.4" Color="Transparent" />
+          </DataGrid.Resources>
+
+          <DataGrid.Columns>
+            <DataGridTemplateColumn Width="*">
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate DataType="{x:Type ViewModels:ITreeViewItem}">
+                  <Grid ColumnDefinitions="Auto,Auto,*,Auto" Margin="{Binding Level, Converter={StaticResource TreeLevelToMarginConverter}}">
+                    <controls:ExpanderButton  Grid.Column="0" Width="15"  Height="15" IsExpanded="{Binding IsExpanded, Mode=TwoWay}" IsVisible="{Binding IsFolder}" />
+                    <Rectangle Grid.Column="0" Fill="Transparent" IsVisible="{Binding !IsFolder}" Width="15"/>
+                    <controls:MaterialIcon Grid.Column="1" Width="15" Classes.Disabled="{Binding Disabled}" Height="15" Kind="FolderOutline" IsVisible="{Binding IsFolder}" Foreground="DarkGoldenrod"/>
+                    <TextBlock Grid.Column="1" FontSize="12" Text="{Binding Data.Name, Converter={StaticResource FilenameToIconConverter}}" IsVisible="{Binding !IsFolder}"/>
+                    <TextBlock Grid.Column="2" 
+                               Classes.Disabled="{Binding Disabled}"
+                               Text="{Binding Data.Name, Mode=TwoWay}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" 
+                               Margin="5,0" 
+                               FontSize="12" 
+                               Foreground="LightGray"/>
+                    <!--<Rectangle Grid.Column="3" Fill="Blue"  Width="15" Height="15"/>-->
+                  </Grid>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+
+              <DataGridTemplateColumn.CellEditingTemplate>
+                <DataTemplate DataType="{x:Type ViewModels:ITreeViewItem}">
+                  <Grid ColumnDefinitions="Auto,Auto,*,Auto" Margin="{Binding Level, Converter={StaticResource TreeLevelToMarginConverter}}">
+                    <controls:ExpanderButton  Grid.Column="0" Width="15"  Height="15" IsExpanded="{Binding IsExpanded, Mode=TwoWay}" IsVisible="{Binding IsFolder}" />
+                    <Rectangle Grid.Column="0" Fill="Transparent" IsVisible="{Binding !IsFolder}" Width="15"/>
+                    <controls:MaterialIcon Grid.Column="1" Width="15" Height="15" Kind="FolderOutline" IsVisible="{Binding IsFolder}" Foreground="DarkGoldenrod"/>
+                    <TextBlock Grid.Column="1" FontSize="12" Text="{Binding Data.Name, Converter={StaticResource FilenameToIconConverter}}" IsVisible="{Binding !IsFolder}"/>
+                    <TextBox Grid.Column="2"
+                             Text="{Binding Data.Name, Mode=TwoWay}"
+                             Name="textInput"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Stretch" 
+                             Margin="5,0" 
+                             Foreground="LightGray" 
+                             Background="Transparent" 
+                             BorderBrush="Transparent" 
+                             FontSize="12" 
+                             VerticalContentAlignment="Center" Padding="0" />
+                    <!--<Rectangle Grid.Column="3" Fill="Blue"  Width="15" Height="15"/>-->
+                  </Grid>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellEditingTemplate>
+            </DataGridTemplateColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
