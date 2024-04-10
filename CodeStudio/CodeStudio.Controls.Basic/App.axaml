@@ -6,6 +6,7 @@
     </Border>
   </Design.PreviewWith>
 
+  <!--
   <Styles.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
@@ -14,39 +15,44 @@
         <MergeResourceInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/Completions/CompletionListItems.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
-  </Styles.Resources>
+  </Styles.Resources> 
+  -->
 
+  <!--
   <Style Selector="Window">
     <Setter Property="FontSize" Value="11"/>
     <Setter Property="Background" Value="#1e1e1e"/>
   </Style>
+  -->
 
+  <!--
   <Style Selector="ComboBox">
     <Setter Property="FontSize" Value="11"/>
     <Setter Property="CornerRadius" Value="0"/>
     <Setter Property="BorderBrush" Value="#2e2e2e"/>
     <Setter Property="BorderThickness" Value="1"/>
   </Style>
+  -->
 
   <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
-  <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
-
+  <!-- <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />-->
+  
+ 
   <Style Selector="DataGridCell">
     <Setter Property="FontSize" Value="11"/>
   </Style>
 
+
   <!--Primitive controls-->
-  <StyleInclude Source="avares://CodeStudio.Controls.Basic/App.axaml" />
-  
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/CodeEditorControl.axaml" />
-  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/ExpanderButton.axaml" />-->
-  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/MaterialIcon.axaml" />-->
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/NumberWithUnit.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/CodeEditorControl.axaml" />-->
+  <StyleInclude Source="avares://CodeStudio.Library/Controls/ExpanderButton.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Library/Controls/MaterialIcon.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/NumberWithUnit.axaml" />-->
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />-->
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />-->
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />-->
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />-->
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />-->
 
   <!--Metrino specific controls-->
   <!--<StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkElementDisplay.axaml" />
@@ -54,12 +60,12 @@
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkReportListControl.axaml" />
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OlmPhysicalEventListControl.axaml" />
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OlmSinglePulseTraceListControl.axaml" />
-  <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OtdrPhysicalEventListControl.axaml" />-->
+  <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OtdrPhysicalEventListControl.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PropertyValueControl.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/TitleFrame.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/GitBranchTag.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />-->
   
 
   <!--Metrino styles controls-->

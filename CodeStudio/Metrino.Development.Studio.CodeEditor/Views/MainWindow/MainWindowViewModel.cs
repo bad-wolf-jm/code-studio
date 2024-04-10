@@ -55,6 +55,7 @@ public partial class MainWindowViewModel : ObservableObject
         ExplorerViewModel = new FileTreeViewModel(_app.FileSystem);
         Workspace = new WorkspaceViewModel(_app);
 
+        ExplorerViewModel.FileSelected += (object sender, FileSelectedEventArgs e) => { WeakReferenceMessenger.Default.Send(new OpenFileMessage(e.FullPath)); };
         _currentFocusPane = ExplorerViewModel;
 
         WeakReferenceMessenger.Default.Register<DisplayOverlayMessage>(this, (r, message) =>

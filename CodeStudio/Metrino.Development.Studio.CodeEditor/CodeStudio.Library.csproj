@@ -70,21 +70,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Controls.Basic\CodeStudio.Controls.Basic.csproj" />
+    <ProjectReference Include="..\CodeStudio.Controls.TreeView\CodeStudio.Controls.TreeView.csproj" />
     <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\MaterialIcon.axaml.cs">
-      <DependentUpon>MaterialIcon.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\CodeEditorControl\CodeEditorControl.axaml.cs">
       <DependentUpon>CodeEditorControl.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\PlotControl.axaml.cs">
       <DependentUpon>PlotControl.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\ExpanderButton.axaml.cs">
-      <DependentUpon>ExpanderButton.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\PrettyFilePath.axaml.cs">
       <DependentUpon>PrettyFilePath.axaml</DependentUpon>

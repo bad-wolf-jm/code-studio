@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Skia" Version="11.0.10" />
+    <PackageReference Include="Material.Icons" Version="2.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Controls\ExpanderButton.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Controls\MaterialIcon.axaml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\ExpanderButton.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\MaterialIcon.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

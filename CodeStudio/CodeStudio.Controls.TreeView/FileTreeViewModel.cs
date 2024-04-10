@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
-using Metrino.Development.Studio.Library.Messages;
+//using Metrino.Development.Studio.Library.Messages;
 using Metrino.Development.UI.Core;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -15,10 +15,26 @@ public class FileTreeElement : TreeViewItem
     public FileTreeViewModel ParentView { get; set; }
 }
 
+public delegate void FileSelectedEventHandler(object sender, FileSelectedEventArgs path);
+
+public class FileSelectedEventArgs : EventArgs
+{
+    private string _fullPath;
+    public string FullPath => _fullPath;
+
+
+    public FileSelectedEventArgs(string fullPath)
+    {
+        this._fullPath = fullPath;
+    }
+}
+
 public partial class FileTreeViewModel : TreeViewModel<FileTreeElement>
 {
     FileSystem _fileSystem;
     public ObservableCollection<ITreeNode> Roots { get; set; }
+
+    public event FileSelectedEventHandler? FileSelected;
 
     [ObservableProperty]
     bool _isFocused = false;
@@ -102,7 +118,8 @@ public partial class FileTreeViewModel : TreeViewModel<FileTreeElement>
         if (data == null)
             return;
 
-        WeakReferenceMessenger.Default.Send(new OpenFileMessage(data.FullPath));
+        FileSelected?.Invoke(this, new FileSelectedEventArgs(data.FullPath));
+        //WeakReferenceMessenger.Default.Send(new OpenFileMessage(data.FullPath));
     }
 
     private bool CanOpenFile(object parameter)

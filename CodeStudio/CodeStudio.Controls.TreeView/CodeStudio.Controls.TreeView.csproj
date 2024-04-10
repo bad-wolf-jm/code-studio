@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.10" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Controls.Basic\CodeStudio.Controls.Basic.csproj" />
+    <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
+  </ItemGroup>
+
 </Project>
