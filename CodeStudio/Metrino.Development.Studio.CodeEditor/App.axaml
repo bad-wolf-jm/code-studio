@@ -62,10 +62,10 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />
   
 
-  <!--Metrino styles controls-->
+  <!--Metrino styles controls
   <StyleInclude Source="avares://CodeStudio.Library/Styles/VisibilityToggle.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Styles/FlatButton.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Styles/DataGridCellStyles.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Styles/GridSplitter.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Styles/NotificationCard.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Library/Styles/NotificationCard.axaml" />-->
 </Styles>
