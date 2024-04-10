@@ -68,7 +68,7 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />-->
   
 
-  <!--Metrino styles controls-->
+  <!-- Styles -->
   <StyleInclude Source="avares://CodeStudio.Controls.Basic/Styles/VisibilityToggle.axaml" />
   <StyleInclude Source="avares://CodeStudio.Controls.Basic/Styles/FlatButton.axaml" />
   <StyleInclude Source="avares://CodeStudio.Controls.Basic/Styles/DataGridCellStyles.axaml" />
