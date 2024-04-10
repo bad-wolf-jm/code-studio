@@ -5,6 +5,7 @@
              xmlns:view_models="clr-namespace:Metrino.Development.UI.ViewModels;assembly=Metrino.Development.UI.ViewModels"
              xmlns:lib_view_models="using:Metrino.Development.Studio.Library.ViewModels"
              xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             xmlns:basic_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Controls.Basic"
              xmlns:converters="clr-namespace:Metrino.Development.Studio.Library.Converters"
              mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
              x:Class="Metrino.Development.Studio.Library.SettingsDocumentView">
@@ -18,7 +19,7 @@
                  Text="{Binding OtdrRepositoryPath, Mode=TwoWay}" 
                  FontSize="11"/>
         <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="OtdrRepositoryPath">
-          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+          <basic_controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
         </Button>
       </Grid>
       <TextBlock Text="OTDR Repository Path" Foreground="Gray"/>
@@ -30,7 +31,7 @@
                  Text="{Binding OtdrBuildPath, Mode=TwoWay}" 
                  FontSize="11"/>
         <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="OtdrBuildPath">
-          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+          <basic_controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
         </Button>
       </Grid>
       <TextBlock Text="OTDR Build Path" Foreground="Gray"/>
@@ -77,7 +78,7 @@
                  Text="{Binding UnitTestXmlRoot, Mode=TwoWay}" 
                  FontSize="11"/>
         <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="UnitTestXmlRoot">
-          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+          <basic_controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
         </Button>
       </Grid>
       <TextBlock Text="Unit Test XML Location" Foreground="Gray"/>
@@ -89,7 +90,7 @@
                  Text="{Binding LocalTestDataBank, Mode=TwoWay}" 
                  FontSize="11"/>
         <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="LocalTestDataBank">
-          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+          <basic_controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
         </Button>
       </Grid>
       <TextBlock Text="Local Test Data Bank" Foreground="Gray"/>
@@ -101,7 +102,7 @@
                  Text="{Binding RemoteTestDataBank, Mode=TwoWay}" 
                  FontSize="11"/>
         <Button Grid.Column="1" Command="{Binding SelectFolderCommand}" CommandParameter="RemoteTestDataBank">
-          <controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
+          <basic_controls:MaterialIcon Kind="FolderOpenOutline" Width="20" Height="20"/>
         </Button>
       </Grid>
       <TextBlock Text="Remote Test Data Bank" Foreground="Gray"/>

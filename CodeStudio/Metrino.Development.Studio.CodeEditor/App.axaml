@@ -44,7 +44,7 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/NumberWithUnit.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />-->
   <StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />
 

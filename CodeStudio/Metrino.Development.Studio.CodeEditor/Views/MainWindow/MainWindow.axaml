@@ -8,7 +8,9 @@
         xmlns:ui_core="using:Metrino.Development.UI.Core"
         xmlns:library_vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels;assembly=CodeStudio.Library"
         xmlns:library_views="clr-namespace:Metrino.Development.Studio.Library;assembly=CodeStudio.Library"
+        xmlns:treeview="clr-namespace:Metrino.Development.Studio.Library;assembly=CodeStudio.Controls.TreeView"
         xmlns:library_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Library"
+        xmlns:basic_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Controls.Basic"
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
@@ -72,14 +74,14 @@
                   HorizontalAlignment="Stretch"
                   Background="Transparent"
                   Click="MinimizeWindow">
-            <library_controls:MaterialIcon Grid.Column="0" Kind="Minimize" Foreground="White" Width="15" Height="15"></library_controls:MaterialIcon>
+            <basic_controls:MaterialIcon Grid.Column="0" Kind="Minimize" Foreground="White" Width="15" Height="15"></basic_controls:MaterialIcon>
           </Button>
           <Button Grid.Column="4"
                   VerticalAlignment="Stretch"
                   HorizontalAlignment="Stretch"
                   Background="Transparent"
                   Click="MaximizeWindow">
-            <library_controls:MaterialIcon Grid.Column="0" Kind="SquareRoundedOutline" Foreground="White" Width="15" Height="15"></library_controls:MaterialIcon>
+            <basic_controls:MaterialIcon Grid.Column="0" Kind="SquareRoundedOutline" Foreground="White" Width="15" Height="15"></basic_controls:MaterialIcon>
           </Button>
           <Button Grid.Column="5"
                   VerticalAlignment="Stretch"
@@ -87,7 +89,7 @@
                   CornerRadius="0,10,0,0"
                   Background="Transparent"
                   Click="ExitApplication">
-            <library_controls:MaterialIcon Grid.Column="0" Kind="Close" Foreground="White" Width="15" Height="15"></library_controls:MaterialIcon>
+            <basic_controls:MaterialIcon Grid.Column="0" Kind="Close" Foreground="White" Width="15" Height="15"></basic_controls:MaterialIcon>
           </Button>
         </Grid>
       </Border>
@@ -127,7 +129,7 @@
             </ContentControl>
           </Border>
           <Grid ColumnDefinitions="350,1,*">
-            <library_views:FileTreeView DataContext="{Binding ExplorerViewModel}"/>
+            <treeview:FileTreeView DataContext="{Binding ExplorerViewModel}"/>
             <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" MinWidth="1"/>
             <library_views:Workspace Grid.Column="2" DataContext="{Binding Workspace}"/>
           </Grid>
