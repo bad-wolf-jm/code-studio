@@ -6,4 +6,20 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Update="PlotControl.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="PlotControl.axaml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
 </Project>
