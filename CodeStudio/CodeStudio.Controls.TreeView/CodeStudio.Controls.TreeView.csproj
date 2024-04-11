@@ -17,4 +17,8 @@
     <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+
 </Project>
