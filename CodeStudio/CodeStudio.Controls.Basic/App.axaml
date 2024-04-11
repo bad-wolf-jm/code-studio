@@ -52,7 +52,7 @@
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />-->
-  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />-->
+  <StyleInclude Source="avares://CodeStudio.Controls.Basic/Controls/TextHighlightControl.axaml" />
 
   <!--Metrino specific controls-->
   <!--<StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkElementDisplay.axaml" />

@@ -38,7 +38,7 @@
   <!--Primitive controls-->
   <StyleInclude Source="avares://CodeStudio.Controls.Basic/App.axaml" />
   <StyleInclude Source="avares://CodeStudio.Controls.TreeView/App.axaml" />
-  
+
   <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/CodeEditorControl.axaml" />
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/ExpanderButton.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/MaterialIcon.axaml" />-->
@@ -47,7 +47,7 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />-->
   <StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />-->
 
   <!--Metrino specific controls-->
   <!--<StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkElementDisplay.axaml" />
@@ -61,7 +61,7 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/TitleFrame.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/GitBranchTag.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />
-  
+
 
   <!--Metrino styles controls
   <StyleInclude Source="avares://CodeStudio.Library/Styles/VisibilityToggle.axaml" />

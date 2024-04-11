@@ -51,7 +51,7 @@
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />-->
   <StyleInclude Source="avares://CodeStudio.Controls.Basic/App.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Controls.TreeView/TreeViewControl.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Controls.TreeView/Base/TreeViewControl.axaml" />
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />-->
 

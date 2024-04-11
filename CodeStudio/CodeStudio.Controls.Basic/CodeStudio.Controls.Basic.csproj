@@ -13,6 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Update="Controls\TextHighlightControl.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="App.axaml">
       <SubType>Designer</SubType>
     </None>
@@ -30,6 +40,10 @@
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Controls\MaterialIcon.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\TextHighlightControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

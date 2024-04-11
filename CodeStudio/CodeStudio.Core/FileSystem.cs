@@ -69,7 +69,6 @@ public class FileSystemNode : ITreeNode, INotifyPropertyChanged, IDisposable
 
                 OnPropertyChanged(nameof(_data.Name));
             }
-
         }
     }
 
