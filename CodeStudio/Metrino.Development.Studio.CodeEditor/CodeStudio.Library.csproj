@@ -71,6 +71,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeStudio.Controls.Basic\CodeStudio.Controls.Basic.csproj" />
+    <ProjectReference Include="..\CodeStudio.Controls.Plots\CodeStudio.Controls.Plots.csproj" />
     <ProjectReference Include="..\CodeStudio.Controls.TreeView\CodeStudio.Controls.TreeView.csproj" />
     <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
   </ItemGroup>

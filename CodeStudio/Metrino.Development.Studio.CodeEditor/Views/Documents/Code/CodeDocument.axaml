@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels"
              xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
              xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             xmlns:plot_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Controls.Plots"
              x:CompileBindings="False"
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
              x:Class="Metrino.Development.Studio.Library.CodeDocumentView"
@@ -66,7 +67,7 @@
               </ItemsControl>
             </Grid>
             <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" BorderThickness="0" MinWidth="1"/>
-            <controls:PlotControl Grid.Column="2" Title="Hello" XAxisTitle="Distance (km)" YAxisTitle="Power (dB)" PlotElementSource="{Binding Plots}"/>
+            <plot_controls:PlotControl Grid.Column="2" Title="Hello" XAxisTitle="Distance (km)" YAxisTitle="Power (dB)" PlotElementSource="{Binding Plots}"/>
           </Grid>
         </TabItem>
         <TabItem Header="OUTPUT" FontSize="12" Height="25" Margin="0" Padding="0">
