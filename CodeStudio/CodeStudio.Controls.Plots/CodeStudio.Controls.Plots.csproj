@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10" />
+    <PackageReference Include="ScottPlot" Version="4.1.73" />
+    <PackageReference Include="ScottPlot.Avalonia" Version="4.1.73" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Controls.Basic\CodeStudio.Controls.Basic.csproj" />
+    <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="PlotControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
