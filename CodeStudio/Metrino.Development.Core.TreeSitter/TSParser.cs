@@ -9,6 +9,14 @@ public sealed class TSParser : IDisposable
         Ptr = c_api.ts_x_parser_new();
     }
 
+    public static TSParser FromLanguageName(string language)
+    {
+        var parser = new TSParser();
+        parser.Setlanguage(TSLanguage.FromLanguageName(language));
+
+        return parser;
+    }
+
     public void Dispose()
     {
         if (Ptr != IntPtr.Zero)

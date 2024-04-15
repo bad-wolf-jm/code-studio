@@ -5,7 +5,7 @@ using System.Linq;
 using Metrino.Development.Core.TreeSitter;
 using Avalonia.Platform;
 using System.Diagnostics;
-using System.Windows.Media;
+//using System.Windows.Media;
 
 namespace Metrino.Development.Studio.Library.Controls;
 

@@ -29,6 +29,45 @@ public sealed class TSLanguage : IDisposable
         }
     }
 
+    [DllImport("TreeSitter-CSharp.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr tree_sitter_c_sharp();
+
+    [DllImport("TreeSitter-Json.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr tree_sitter_json();
+
+    [DllImport("TreeSitter-Julia.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr tree_sitter_julia();
+
+    [DllImport("TreeSitter-Lua.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr tree_sitter_lua();
+
+    [DllImport("TreeSitter-Matlab.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr tree_sitter_matlab();
+
+    [DllImport("TreeSitter-Python.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr tree_sitter_python();
+
+    public static TSLanguage FromLanguageName(string language)
+    {
+        switch (language)
+        {
+            case "c-sharp":
+                return new TSLanguage(tree_sitter_c_sharp());
+            case "julia":
+                return new TSLanguage(tree_sitter_julia());
+            case "lua":
+                return new TSLanguage(tree_sitter_lua());
+            case "json":
+                return new TSLanguage(tree_sitter_json());
+            case "matlab":
+                return new TSLanguage(tree_sitter_matlab());
+            case "pyhton":
+                return new TSLanguage(tree_sitter_python());
+        }
+
+        return new TSLanguage(IntPtr.Zero);
+    }
+
     public void Dispose()
     {
         if (Ptr != IntPtr.Zero)

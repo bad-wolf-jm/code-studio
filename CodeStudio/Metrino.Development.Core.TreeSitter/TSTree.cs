@@ -24,6 +24,7 @@ public sealed class TSTree : IDisposable
 
         return ptr != IntPtr.Zero ? new TSTree(ptr) : null;
     }
+
     public TSNode RootNode => c_api.ts_x_tree_root_node(Ptr);
 
     public TSNode RootNodeWithOffset(uint offsetBytes, TSPoint offsetPoint) 
