@@ -7,25 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-CSharp.dll" Link="TreeSitter-CSharp.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-CSharp.dll" Link="TreeSitter-CSharp.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Json.dll" Link="TreeSitter-Json.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Json.dll" Link="TreeSitter-Json.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Julia.dll" Link="TreeSitter-Julia.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Julia.dll" Link="TreeSitter-Julia.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Lua.dll" Link="TreeSitter-Lua.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Lua.dll" Link="TreeSitter-Lua.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Matlab.dll" Link="TreeSitter-Matlab.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Matlab.dll" Link="TreeSitter-Matlab.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Python.dll" Link="TreeSitter-Python.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitter-Python.dll" Link="TreeSitter-Python.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\..\TreeSitter\Build\Bin\Debug\TreeSitterLibrary.dll" Link="TreeSitterLibrary.dll">
+    <None Include="..\..\..\TreeSitter\Build\Bin\Debug\TreeSitterLibrary.dll" Link="TreeSitterLibrary.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
