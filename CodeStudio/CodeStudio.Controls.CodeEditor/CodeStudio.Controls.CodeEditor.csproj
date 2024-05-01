@@ -12,8 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Core.TreeSitter\CodeStudio.Core.TreeSitter.csproj" />
     <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
-    <ProjectReference Include="..\Metrino.Development.Core.TreeSitter\CodeStudio.Core.TreeSitter.csproj" />
+    <ProjectReference Include="..\CodeStudio.Core.TreeSitter\CodeStudio.Core.TreeSitter.csproj" />
   </ItemGroup>
 
 </Project>
