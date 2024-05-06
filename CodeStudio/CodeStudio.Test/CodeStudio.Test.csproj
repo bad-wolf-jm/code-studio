@@ -33,6 +33,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeStudio.Library\CodeStudio.Library.csproj" />
-    <ProjectReference Include="..\Metrino.Development.Studio.CodeEditor\CodeStudio.Library.csproj" />
   </ItemGroup>
 </Project>
