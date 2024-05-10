@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System;
+using Metrino.Development.Studio.Library.Controls;
 
 namespace Metrino.Development.Studio.Test.ViewModels
 {
@@ -23,6 +24,7 @@ namespace Metrino.Development.Studio.Test.ViewModels
         //public UnitTestDocumentViewModel UnitTests { get; set; }
         //public DataFilesViewModel UnitTestsDataFiles { get; set; }
 
+        public CodeDocument Code { get; private set; }
         public FileSystem _fileSystem { get; set; }
         //public Library.ViewModels.FileTreeViewModel TestTreeView { get; set; }
 
@@ -55,6 +57,9 @@ namespace Metrino.Development.Studio.Test.ViewModels
             //await UnitTestsDataFiles.Initialize();
             //await TestCode.LoadPathAsync(@"D:\Work\Projects\Relax\UnitTesting\consolidation_unit_tests_test.lua", "develop");
             await TestCode.LoadPathAsync(@"D:\Work\Git\OTDRMonoGlue\Source\TheTool\Metrino.Development.Studio.Test\Assets\lua_parser_test.lua", "develop");
+            Code = new CodeDocument();
+            Code.Load(@"D:\Work\Projects\Relax\UnitTesting\consolidation_unit_tests_test.lua");
+            //Code.Load(@"D:\Work\Projects\Relax\StartOffset\test_start_offset.lua");
         }
 
         public void Dispose()

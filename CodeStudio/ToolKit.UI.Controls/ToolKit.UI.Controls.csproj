@@ -1,0 +1,96 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.10" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Material.Icons" Version="2.1.9" />
+    <PackageReference Include="ScottPlot" Version="4.1.73" />
+    <PackageReference Include="ScottPlot.Avalonia" Version="4.1.73" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeStudio.Core.TreeSitter\CodeStudio.Core.TreeSitter.csproj" />
+    <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CodeEditor\CustomCodeEditorControl.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ExpanderButton.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\MaterialIcon.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\TextHighlightControl.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Plots\PlotControl.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="TreeView\FileTreeView.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="TreeView\TreeViewControl.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CodeEditor\CustomCodeEditorControl.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Controls\ExpanderButton.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Controls\MaterialIcon.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Controls\TextHighlightControl.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Plots\PlotControl.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Styles\DataGridCellStyles.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Styles\FlatButton.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Styles\GridSplitter.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Styles\NotificationCard.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Styles\VisibilityToggle.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="TreeView\App.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="TreeView\FileTreeView.axaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="TreeView\TreeViewControl.axaml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>

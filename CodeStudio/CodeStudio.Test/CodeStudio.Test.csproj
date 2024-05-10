@@ -33,5 +33,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeStudio.Library\CodeStudio.Library.csproj" />
+    <ProjectReference Include="..\ToolKit.UI.Controls\ToolKit.UI.Controls.csproj" />
   </ItemGroup>
 </Project>

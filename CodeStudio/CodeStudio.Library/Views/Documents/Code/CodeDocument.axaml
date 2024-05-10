@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels"
              xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
              xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
-             xmlns:plot_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Controls.Plots"
+             xmlns:plot_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=ToolKit.UI.Controls"
              x:CompileBindings="False"
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
              x:Class="Metrino.Development.Studio.Library.CodeDocumentView"

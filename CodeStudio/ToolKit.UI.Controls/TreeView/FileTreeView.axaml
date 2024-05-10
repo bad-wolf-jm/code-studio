@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Metrino.Development.UI.ViewModels"
+             x:DataType="vm:FileTreeViewModel"
+             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+             x:Class="Metrino.Development.Studio.Library.FileTreeView">
+
+  <UserControl.Styles>
+    <Style Selector="Button.ExplorerAction">
+      <Setter Property="Width" Value="15"/>
+      <Setter Property="Height" Value="15"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="Margin" Value="1,0"/>
+    </Style>
+  </UserControl.Styles>
+
+  <Grid RowDefinitions="*">
+    <controls:TreeViewControl
+           Name="TreeView"
+           Grid.Row="1"
+           Foreground="White"
+           ItemsSource="{Binding Roots}"
+           OpenItemCommand="{Binding OpenFileCommand}"
+           Margin="5,5,0,0"
+           BorderThickness="0"
+           VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+  </Grid>
+
+</UserControl>

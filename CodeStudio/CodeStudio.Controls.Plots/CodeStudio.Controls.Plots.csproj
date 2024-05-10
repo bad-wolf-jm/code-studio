@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CodeStudio.Controls.Basic\CodeStudio.Controls.Basic.csproj" />
     <ProjectReference Include="..\CodeStudio.Core\CodeStudio.Core.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,119 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:design="using:Metrino.Development.Studio.Design"
+        xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls">
+  <Design.PreviewWith>
+    <Border Padding="0" Background="Transparent">
+      <StackPanel>
+        <NotificationCard Content="Testing" />
+        <NotificationCard>
+          <design:TestErrorNotificationCard/>
+        </NotificationCard>
+        <NotificationCard>
+          <design:TestInfoNotificationCard/>
+        </NotificationCard>
+        <NotificationCard>
+          <design:TestWarningNotificationCard/>
+        </NotificationCard>
+        <NotificationCard>
+          <design:TestSuccessNotificationCard/>
+        </NotificationCard>
+      </StackPanel>
+    </Border>  
+  </Design.PreviewWith>
+
+  <Style Selector="NotificationCard">
+    <Setter Property="UseLayoutRounding" Value="True"/>
+    <Setter Property="Width" Value="450"/>
+    <Setter Property="FontSize" Value="11"/>
+    <Setter Property="Foreground" Value="White"/>
+    <Setter Property="RenderTransformOrigin" Value="50%,75%"/>
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Background" Value="#101010" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <LayoutTransformControl Name="PART_LayoutTransformControl" UseRenderTransform="True">
+          <Border CornerRadius="{TemplateBinding CornerRadius}" BoxShadow="0 6 8 0 #4F000000" Margin="5 5 5 10">
+            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    ClipToBounds="True">
+              <DockPanel>
+                <Panel x:Name="PART_HeaderBar" Height="4" Background="{DynamicResource NotificationCardProgressBackgroundBrush}" DockPanel.Dock="Top" />
+                <ContentControl Name="PART_Content" MinHeight="64" Content="{TemplateBinding Content}" >
+                  <ContentControl.DataTemplates>
+                    <DataTemplate DataType="INotification">
+                      <StackPanel
+                          Margin="5,10,5,10"
+                          Spacing="8"
+                          TextElement.Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                          <controls:MaterialIcon/>                        
+                          <TextBlock Margin="5,0,12,0" FontWeight="Medium" Text="{Binding Title}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock
+                            MaxHeight="80"
+                            Margin="10,0,12,0"
+                            Foreground="Gray"
+                            Text="{Binding Message}"
+                            TextWrapping="Wrap" />
+                      </StackPanel>
+                    </DataTemplate>
+                    <DataTemplate DataType="x:String">
+                      <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <controls:MaterialIcon Kind="MessageOutline" Foreground="{DynamicResource NotificationCardProgressBackgroundBrush}"/>
+                        <TextBlock Margin="12"
+                                   VerticalAlignment="Center"
+                          Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                          Text="{Binding}" />
+                      </StackPanel>
+                    </DataTemplate>
+                  </ContentControl.DataTemplates>
+                </ContentControl>
+              </DockPanel>
+            </Border>
+          </Border>
+        </LayoutTransformControl>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^ controls|MaterialIcon">
+      <Setter Property="Width" Value="25"/>
+      <Setter Property="Height" Value="25"/>
+    </Style>
+
+    <Style Selector="^:information /template/ Panel#PART_HeaderBar">
+      <Setter Property="Background" Value="{DynamicResource NotificationCardInformationBackgroundBrush}"/>
+    </Style>
+    <Style Selector="^:information controls|MaterialIcon">
+      <Setter Property="Kind" Value="InfoOutline"/>
+      <Setter Property="Foreground" Value="{DynamicResource NotificationCardInformationBackgroundBrush}"/>
+    </Style>
+
+    <Style Selector="^:success /template/ Panel#PART_HeaderBar">
+      <Setter Property="Background" Value="{DynamicResource NotificationCardSuccessBackgroundBrush}"/>
+    </Style>
+    <Style Selector="^:success controls|MaterialIcon">
+      <Setter Property="Kind" Value="Success"/>
+      <Setter Property="Foreground" Value="{DynamicResource NotificationCardSuccessBackgroundBrush}"/>
+    </Style>
+
+    <Style Selector="^:warning /template/ Panel#PART_HeaderBar">
+      <Setter Property="Background" Value="{DynamicResource NotificationCardWarningBackgroundBrush}"/>
+    </Style>
+    <Style Selector="^:warning controls|MaterialIcon">
+      <Setter Property="Kind" Value="WarningBoxOutline"/>
+      <Setter Property="Foreground" Value="{DynamicResource NotificationCardWarningBackgroundBrush}"/>
+    </Style>
+
+    <Style Selector="^:error /template/ Panel#PART_HeaderBar">
+      <Setter Property="Background" Value="{DynamicResource NotificationCardErrorBackgroundBrush}"/>
+    </Style>
+    <Style Selector="^:error controls|MaterialIcon">
+      <Setter Property="Kind" Value="ErrorOutline"/>
+      <Setter Property="Foreground" Value="{DynamicResource NotificationCardErrorBackgroundBrush}"/>
+    </Style>
+  </Style>
+</Styles>
