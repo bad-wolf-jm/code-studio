@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ScottPlot.Plottable;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public class PlotControl : TemplatedControl
 {
@@ -138,7 +138,7 @@ public class PlotControl : TemplatedControl
         );
     }
 
-    private static ScottPlot.LineStyle ConvertLineStyle(UI.Core.LineStyle c)
+    private static ScottPlot.LineStyle ConvertLineStyle(LineStyle c)
     {
         return (ScottPlot.LineStyle)c;
     }

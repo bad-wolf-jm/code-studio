@@ -129,7 +129,7 @@
             </ContentControl>
           </Border>
           <Grid ColumnDefinitions="350,1,*">
-            <treeview:FileTreeView DataContext="{Binding ExplorerViewModel}"/>
+            <basic_controls:FileTreeView DataContext="{Binding ExplorerViewModel}"/>
             <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" MinWidth="1"/>
             <library_views:Workspace Grid.Column="2" DataContext="{Binding Workspace}"/>
           </Grid>

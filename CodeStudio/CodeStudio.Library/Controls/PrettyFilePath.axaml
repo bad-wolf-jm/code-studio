@@ -1,7 +1,8 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:sys="using:System"
-        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+        xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+        xmlns:tk_controls="clr-namespace:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls">
   <Design.PreviewWith>
     <controls:PrettyFilePath />
   </Design.PreviewWith>
@@ -23,7 +24,7 @@
           <ItemsControl.ItemTemplate>
             <DataTemplate>
               <Grid ColumnDefinitions="15,*">
-                <controls:MaterialIcon Grid.Column="0" Kind="ChevronRight" Width="15" Height="15" Foreground="Gray" VerticalAlignment="Center"/>
+                <tk_controls:MaterialIcon Grid.Column="0" Kind="ChevronRight" Width="15" Height="15" Foreground="Gray" VerticalAlignment="Center"/>
                 <TextBlock Grid.Column="1" Text="{Binding DataType={x:Type sys:String}}" VerticalAlignment="Center" Margin="0" Padding="0"/>
               </Grid>
             </DataTemplate>

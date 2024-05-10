@@ -2,12 +2,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
-using Avalonia.Interactivity;
 using Avalonia.Media;
 using Metrino.Development.Core;
-using Metrino.Development.Studio.Library.Controls;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 
 namespace ToolKit.UI.Controls;

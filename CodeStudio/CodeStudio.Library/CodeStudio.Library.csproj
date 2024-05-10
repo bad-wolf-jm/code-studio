@@ -84,9 +84,6 @@
     <Compile Update="Controls\GitBranchTag.axaml.cs">
       <DependentUpon>GitBranchTag.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\CodeSnippet.axaml.cs">
-      <DependentUpon>CodeSnippet.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\TitleFrame.axaml.cs">
       <DependentUpon>TitleFrame.axaml</DependentUpon>
     </Compile>

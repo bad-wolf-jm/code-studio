@@ -1,19 +1,13 @@
-﻿using Avalonia.Threading;
-using AvaloniaEdit.Document;
+﻿using AvaloniaEdit.Document;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
-using Metrino.Development.Builder;
-using Metrino.Development.Core;
 using Metrino.Development.Studio.Library.Controls;
-using Metrino.Development.Studio.Library.Messages;
 using Metrino.Development.UI.Core;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
+using ToolKit.UI.Controls;
 
 namespace Metrino.Development.Studio.Library.ViewModels;
 

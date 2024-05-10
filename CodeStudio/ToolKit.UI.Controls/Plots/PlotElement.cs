@@ -2,7 +2,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Metrino.Development.UI.Core;
+namespace ToolKit.UI.Controls;
 
 public partial class PlotElementData : ObservableObject
 {

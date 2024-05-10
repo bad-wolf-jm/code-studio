@@ -6,38 +6,39 @@ using Avalonia.LogicalTree;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Metrino.Development.UI.Core;
-using System;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Input;
+using Metrino.Development.UI.ViewModels;
+
+using TreeViewItem = Metrino.Development.UI.ViewModels.TreeViewItem;
 
 namespace ToolKit.UI.Controls;
 
-public partial class TreeViewItem : ObservableObject
-{
-    [ObservableProperty]
-    bool _isFolder = false;
+//public partial class TreeViewItem : ObservableObject
+//{
+//    [ObservableProperty]
+//    bool _isFolder = false;
 
-    [ObservableProperty]
-    bool _isExpanded = false;
+//    [ObservableProperty]
+//    bool _isExpanded = false;
 
-    [ObservableProperty]
-    int _level = 0;
+//    [ObservableProperty]
+//    int _level = 0;
 
-    [ObservableProperty]
-    bool _disabled = false;
+//    [ObservableProperty]
+//    bool _disabled = false;
 
-    [ObservableProperty]
-    ITreeNode _data = null;
+//    [ObservableProperty]
+//    ITreeNode _data = null;
 
-    public void NotifyInternalChange(PropertyChangedEventArgs args)
-    {
-        OnPropertyChanged(args.PropertyName);
-    }
-}
+//    public void NotifyInternalChange(PropertyChangedEventArgs args)
+//    {
+//        OnPropertyChanged(args.PropertyName);
+//    }
+//}
 
 public class UpdateElementEventArgs : EventArgs
 {

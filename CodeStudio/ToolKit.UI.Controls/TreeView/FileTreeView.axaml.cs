@@ -1,13 +1,10 @@
 using Avalonia.Controls;
 using Avalonia.Input;
-using Metrino.Development.Studio.Library.Controls;
 using Metrino.Development.UI.Core;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using ToolKit.UI.Controls;
-
+using TreeViewItem = Metrino.Development.UI.ViewModels.TreeViewItem;
 namespace ToolKit.UI.Controls;
+
 
 public partial class FileTreeView : UserControl
 {
@@ -18,20 +15,20 @@ public partial class FileTreeView : UserControl
     {
         InitializeComponent();
 
-        TreeView.UpdateCompleted += TreeView_UpdateCompleted;
-        TreeView.UpdateCancelled += TreeView_UpdateCancelled;
+        TreeViewComponent.UpdateCompleted += TreeView_UpdateCompleted;
+        TreeViewComponent.UpdateCancelled += TreeView_UpdateCancelled;
 
-        TreeView.InsertCompleted += TreeView_InsertCompleted;
-        TreeView.InsertCancelled += TreeView_InsertCancelled;
+        TreeViewComponent.InsertCompleted += TreeView_InsertCompleted;
+        TreeViewComponent.InsertCancelled += TreeView_InsertCancelled;
 
-        TreeView.DragStart += TreeView_DragStart;
+        TreeViewComponent.DragStart += TreeView_DragStart;
     }
 
     private int FindIndex(FileSystemNode item)
     {
-        for (int i = 0; i < TreeView.DisplayedItems.Count; i++)
+        for (int i = 0; i < TreeViewComponent.DisplayedItems.Count; i++)
         {
-            if (TreeView.DisplayedItems[i].Data == item)
+            if (TreeViewComponent.DisplayedItems[i].Data == item)
                 return i;
         }
 
@@ -56,15 +53,15 @@ public partial class FileTreeView : UserControl
 
         var index = FindIndex(selectedItem);
 
-        var treeItem = TreeView.DisplayedItems[index];
+        var treeItem = TreeViewComponent.DisplayedItems[index];
         if (!treeItem.IsExpanded)
             treeItem.IsExpanded = true;
 
         var addFileToken = new FileSystemNodeData { FullPath = selectedItem.FullPath, Name = "", IsDirectory = isDirectory };
         var data = new FileSystemNode { Data = addFileToken };
-        var itemToAdd = new Controls.TreeViewItem { Data = data, IsFolder = isDirectory, IsExpanded = false, Level = treeItem.Level + 1 };
+        var itemToAdd = new TreeViewItem { Data = data, IsFolder = isDirectory, IsExpanded = false, Level = treeItem.Level + 1 };
 
-        TreeView.InsertRow(index + 1, itemToAdd);
+        TreeViewComponent.InsertRow(index + 1, itemToAdd);
 
         return index + 1;
     }
@@ -75,7 +72,7 @@ public partial class FileTreeView : UserControl
 
         _isEditing = true;
 
-        _insertIndex = InsertItem(TreeView.SelectedItem as FileSystemNode, false);
+        _insertIndex = InsertItem(TreeViewComponent.SelectedItem as FileSystemNode, false);
     }
 
     private void AddFolderButton_Tapped(object? sender, Avalonia.Input.TappedEventArgs e)
@@ -84,7 +81,7 @@ public partial class FileTreeView : UserControl
 
         _isEditing = true;
 
-        _insertIndex = InsertItem(TreeView.SelectedItem as FileSystemNode, true);
+        _insertIndex = InsertItem(TreeViewComponent.SelectedItem as FileSystemNode, true);
     }
 
     private void TreeView_InsertCancelled(object? sender, InsertElementEventArgs e)
@@ -99,7 +96,7 @@ public partial class FileTreeView : UserControl
         var element = e.InsertedElement as FileSystemNode;
         var elementData = element.Data as FileSystemNodeData;
 
-        TreeView.DisplayedItems.RemoveAt(_insertIndex);
+        TreeViewComponent.DisplayedItems.RemoveAt(_insertIndex);
 
         if (string.IsNullOrEmpty(element.Name))
             return;
@@ -124,11 +121,11 @@ public partial class FileTreeView : UserControl
 
         _isEditing = true;
 
-        var selectedItem = TreeView.SelectedItem as FileSystemNode;
+        var selectedItem = TreeViewComponent.SelectedItem as FileSystemNode;
 
         if (selectedItem == null) return;
 
-        TreeView.UpdateRow(FindIndex(selectedItem));
+        TreeViewComponent.UpdateRow(FindIndex(selectedItem));
     }
 
     private void TreeView_UpdateCancelled(object? sender, UpdateElementEventArgs e)
@@ -166,15 +163,15 @@ public partial class FileTreeView : UserControl
     private void CollapseAllButton_Tapped(object? sender, Avalonia.Input.TappedEventArgs e)
     {
         int maxLevel = 1;
-        if (TreeView.DisplayedItems.All(x => x.Level <= 1))
+        if (TreeViewComponent.DisplayedItems.All(x => x.Level <= 1))
             maxLevel = 0;
 
-        var newCollection = TreeView.DisplayedItems.Where(x => x.Level <= maxLevel).ToList();
+        var newCollection = TreeViewComponent.DisplayedItems.Where(x => x.Level <= maxLevel).ToList();
 
         foreach ( var item in newCollection )
             item.IsExpanded = false;
 
-        TreeView.DisplayedItems = new ObservableCollection<Controls.TreeViewItem>(newCollection);
+        TreeViewComponent.DisplayedItems = new ObservableCollection<TreeViewItem>(newCollection);
     }
 
     private async void TreeView_DragStart(object? sender, DragStartEventArgs e)

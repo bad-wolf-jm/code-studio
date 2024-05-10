@@ -57,6 +57,7 @@
   <StyleInclude Source="avares://ToolKit.UI.Controls/CodeEditor/CustomCodeEditorControl.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Plots/PlotControl.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/TreeView/TreeViewControl.axaml" />
+  <!--<StyleInclude Source="avares://ToolKit.UI.Controls/TreeView/FileTreeView.axaml" />-->
   <!--Metrino specific controls-->
   <!--<StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkElementDisplay.axaml" />
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkReport.axaml" />

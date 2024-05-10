@@ -6,7 +6,7 @@
              x:DataType="vm:FileTreeViewModel"
              xmlns:controls="clr-namespace:ToolKit.UI.Controls"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
-             x:Class="Metrino.Development.Studio.Library.FileTreeView">
+             x:Class="ToolKit.UI.Controls.FileTreeView">
 
   <UserControl.Styles>
     <Style Selector="Button.ExplorerAction">
@@ -20,14 +20,15 @@
 
   <Grid RowDefinitions="*">
     <controls:TreeViewControl
-           Name="TreeView"
+           Name="TreeViewComponent"
            Grid.Row="1"
            Foreground="White"
            ItemsSource="{Binding Roots}"
            OpenItemCommand="{Binding OpenFileCommand}"
            Margin="5,5,0,0"
            BorderThickness="0"
-           VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+           VerticalAlignment="Stretch" 
+           HorizontalAlignment="Stretch" />
   </Grid>
 
 </UserControl>

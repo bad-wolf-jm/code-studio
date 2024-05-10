@@ -1,4 +1,4 @@
-﻿namespace Metrino.Development.UI.Core;
+﻿namespace ToolKit.UI.Controls;
 
 public enum LineStyle
 {
