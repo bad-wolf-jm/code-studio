@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using System.IO;
 
-namespace Metrino.Development.Studio.Library.Converters;
+namespace ToolKit.UI.Controls;
 
 public class FilenameToIconConverter : IValueConverter
 {

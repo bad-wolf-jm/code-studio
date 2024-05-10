@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:Metrino.Development.UI.ViewModels"
              x:DataType="vm:FileTreeViewModel"
-             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             xmlns:controls="clr-namespace:ToolKit.UI.Controls"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
              x:Class="Metrino.Development.Studio.Library.FileTreeView">
 

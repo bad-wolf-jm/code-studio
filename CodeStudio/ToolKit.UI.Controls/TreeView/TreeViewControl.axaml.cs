@@ -14,7 +14,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public partial class TreeViewItem : ObservableObject
 {
