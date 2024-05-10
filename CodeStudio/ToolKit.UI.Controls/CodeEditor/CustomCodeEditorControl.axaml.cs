@@ -5,11 +5,12 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Metrino.Development.Core;
+using Metrino.Development.Studio.Library.Controls;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public class CustomCodeEditorControl : TemplatedControl
 {
@@ -280,7 +281,7 @@ public class CustomCodeEditorControl : TemplatedControl
                         var format = Highlight.CaptureFormats[hl.Class];
                         var highlightFormat = new HighlightFormat();
                         highlightFormat.Typeface = new Typeface(textFormat.FontFamily, format.Style, format.Weight);
-                        var color0 = Core.Color.FromHex(format.Foreground);
+                        var color0 = Metrino.Development.Core.Color.FromHex(format.Foreground);
                         var color1 = new Avalonia.Media.Color((byte)color0.A, (byte)color0.R, (byte)color0.G, (byte)color0.B);
                         highlightFormat.Foreground = new SolidColorBrush(color1);
                         _highlightFormatCache[hl.Class] = highlightFormat;

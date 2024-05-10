@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public class TextHighlightControl : TemplatedControl
 {

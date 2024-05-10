@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System;
 using Metrino.Development.Studio.Library.Controls;
+using ToolKit.UI.Controls;
 
 namespace Metrino.Development.Studio.Test.ViewModels
 {

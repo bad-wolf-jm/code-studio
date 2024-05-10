@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public struct TextPosition
 {

@@ -3,7 +3,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
-        xmlns:controls="using:Metrino.Development.Studio.Library.Controls"
+        xmlns:controls="using:ToolKit.UI.Controls"
         xmlns:converters="clr-namespace:Metrino.Development.Studio.Library.Converters"
         xmlns:ViewModels="clr-namespace:Metrino.Development.UI.ViewModels"
         x:CompileBindings="False">

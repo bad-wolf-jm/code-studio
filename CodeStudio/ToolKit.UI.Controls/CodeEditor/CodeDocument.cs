@@ -7,7 +7,7 @@ using Avalonia.Platform;
 using System.Diagnostics;
 //using System.Windows.Media;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public struct TextHighlight
 {

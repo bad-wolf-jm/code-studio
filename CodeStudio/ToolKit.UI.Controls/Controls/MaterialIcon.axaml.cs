@@ -2,7 +2,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia;
 using Material.Icons;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public class MaterialIcon : TemplatedControl
 {

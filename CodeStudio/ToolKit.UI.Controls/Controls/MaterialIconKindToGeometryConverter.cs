@@ -5,7 +5,7 @@ using Avalonia.Data.Converters;
 using Avalonia.Media;
 using Material.Icons;
 
-namespace Metrino.Development.Studio.Library.Converters;
+namespace ToolKit.UI.Controls;
 
 public class MaterialIconKindToGeometryConverter : IValueConverter
 {

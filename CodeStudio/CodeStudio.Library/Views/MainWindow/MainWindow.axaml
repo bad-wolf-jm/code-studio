@@ -10,7 +10,7 @@
         xmlns:library_views="clr-namespace:Metrino.Development.Studio.Library;assembly=CodeStudio.Library"
         xmlns:treeview="clr-namespace:Metrino.Development.Studio.Library;assembly=ToolKit.UI.Controls"
         xmlns:library_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=CodeStudio.Library"
-        xmlns:basic_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=ToolKit.UI.Controls"
+        xmlns:basic_controls="clr-namespace:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
