@@ -33,7 +33,7 @@ public class ApplicationModel
         {
             var defaultConfig = new Configuration
             {
-                OtdrRepositoryPath = @"D:\Work\Git\OTDR",
+                OtdrRepositoryPath = @"c:\gitlab\psr",
                 OtdrBuildPath = @"D:\Work\Build\Lib",
                 OtdrBuildConfiguration = @"Debug",
                 OtdrTargetFramework = @"net48",

@@ -29,7 +29,7 @@ namespace Metrino.Development.Studio.Test
                 BindingPlugins.DataValidators.RemoveAt(0);
 
                 //var userConfig = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                var userConfig = @"D:\Work\AppData";
+                var userConfig = @"c:\Work\AppData";
                 var appConfigRoot = Path.Combine(userConfig, "OlmDevTool_dev");
                 var appConfig = UI.Core.Utilities.CreateFolder(new string[] { appConfigRoot, "Config" });
                 var appData = UI.Core.Utilities.CreateFolder(new string[] { appConfigRoot, "Data" });
