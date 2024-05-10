@@ -52,6 +52,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Assets\SyntaxHighlights\lua\highlights.scm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="CodeEditor\CustomCodeEditorControl.axaml">
       <SubType>Designer</SubType>
     </None>

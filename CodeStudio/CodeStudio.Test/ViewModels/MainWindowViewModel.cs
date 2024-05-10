@@ -58,7 +58,7 @@ namespace Metrino.Development.Studio.Test.ViewModels
             //await TestCode.LoadPathAsync(@"D:\Work\Projects\Relax\UnitTesting\consolidation_unit_tests_test.lua", "develop");
             await TestCode.LoadPathAsync(@"D:\Work\Git\OTDRMonoGlue\Source\TheTool\Metrino.Development.Studio.Test\Assets\lua_parser_test.lua", "develop");
             Code = new CodeDocument();
-            Code.Load(@"D:\Work\Projects\Relax\UnitTesting\consolidation_unit_tests_test.lua");
+            Code.Load(@"D:\Work\Git\code-studio\CodeStudio\CodeStudio.Test\Assets\lua_parser_test.lua");
             //Code.Load(@"D:\Work\Projects\Relax\StartOffset\test_start_offset.lua");
         }
 

@@ -54,23 +54,33 @@ public partial class CodeDocument : ObservableObject, ICodeDocument
         _parser = TSParser.FromLanguageName("lua");
         _highlights = new List<TextHighlight>();
 
-        var uri = $"avares://Metrino.Development.Studio.Library/Assets/SyntaxHighlights/lua/highlights.scm";
-        using (var query = AssetLoader.Open(new System.Uri(uri)))
-        using (var sr = new StreamReader(query))
+        //var uri = $"avares://ToolKit.UI.Controls/Assets/SyntaxHighlights/lua/highlights.scm";
+        var uri = @"D:\Work\Git\code-studio\CodeStudio\ToolKit.UI.Controls\Assets\SyntaxHighlights\lua\highlights.scm";
+        try
         {
-            var q = sr.ReadToEnd();
-            uint errorOffset;
-            ETSQueryError errorType;
-            _highlightQuery = _parser.Language().QueryNew(q, out errorOffset, out errorType);
-            if (errorType != ETSQueryError.TSQueryErrorNone)
+            //using (var query = AssetLoader.Open(new System.Uri(uri)))
+            using (var query = File.Open(uri, FileMode.Open))
+            using (var sr = new StreamReader(query))
             {
-                var problem = q.Substring((int)errorOffset);
-                _highlightQuery = null;
+                var q = sr.ReadToEnd();
+                uint errorOffset;
+                ETSQueryError errorType;
+                _highlightQuery = _parser.Language().QueryNew(q, out errorOffset, out errorType);
+                if (errorType != ETSQueryError.TSQueryErrorNone)
+                {
+                    var problem = q.Substring((int)errorOffset);
+                    _highlightQuery = null;
+                }
             }
+             
+            UpdateLines();
+            ParseDocument();
         }
-
-        UpdateLines();
-        //ParseDocument();
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+ 
     }
 
     private void ParseDocument()
