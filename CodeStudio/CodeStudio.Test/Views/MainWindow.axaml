@@ -3,7 +3,7 @@
         xmlns:vm="using:Metrino.Development.Studio.Test.ViewModels"
         xmlns:library_vm="clr-namespace:Metrino.Development.Studio.Library.ViewModels;assembly=CodeStudio.Library"
         xmlns:ce="clr-namespace:Metrino.Development.Studio.Library;assembly=CodeStudio.Library"
-        xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=ToolKit.UI.Controls"
+        xmlns:controls="clr-namespace:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"

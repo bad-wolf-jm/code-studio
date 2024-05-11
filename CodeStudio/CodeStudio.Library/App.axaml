@@ -61,7 +61,7 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PropertyValueControl.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/TitleFrame.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/GitBranchTag.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />-->
 
 
   <!--Metrino styles controls

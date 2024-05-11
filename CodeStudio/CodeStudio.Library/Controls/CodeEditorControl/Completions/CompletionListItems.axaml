@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:cc="using:Metrino.Development.Studio.Library.Controls"
-                    xmlns:tk_controls="using:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
+                    xmlns:tk_controls="clr-namespace:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
                     x:ClassModifier="public">
 
   <ControlTheme x:Key="{x:Type cc:CompletionListItems}" TargetType="cc:CompletionListItems">
@@ -11,7 +11,7 @@
           <cc:CompletionListBox.ItemTemplate>
             <DataTemplate x:DataType="cc:ICompletionData">
               <Grid ColumnDefinitions="25,*,*">
-                <cc:MaterialIcon Grid.Column="0" Kind="RadioButtonUnchecked" Width="15" Height="15" FontWeight="Light" Foreground="#549cd6" Padding="5,0"/>
+                <tk_controls:MaterialIcon Grid.Column="0" Kind="RadioButtonUnchecked" Width="15" Height="15" FontWeight="Light" Foreground="#549cd6" Padding="5,0"/>
                 <TextBlock Grid.Column="1" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBlock Grid.Column="2" Text="{Binding Namespace}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Gray"/>
               </Grid>
