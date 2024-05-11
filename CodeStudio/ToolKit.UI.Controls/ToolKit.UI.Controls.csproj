@@ -47,6 +47,15 @@
     <Compile Update="Controls\GitBranchTag.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Controls\PrettyFilePath.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\NumberWithUnit.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\PropertyValueControl.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="TreeView\FileTreeView.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>

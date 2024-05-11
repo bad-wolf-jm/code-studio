@@ -80,6 +80,9 @@
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/GridSplitter.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/NotificationCard.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/VisibilityToggle.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/PrettyFilePath.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/NumberWithUnit.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/PropertyValueControl.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/GitBranchTag.axaml" />
 
 </Styles>

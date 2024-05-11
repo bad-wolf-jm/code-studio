@@ -1,6 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:Metrino.Development.Studio.Library.Controls">
+        xmlns:controls="using:ToolKit.UI.Controls">
   <Design.PreviewWith>
     <controls:NumberWithUnit />
   </Design.PreviewWith>

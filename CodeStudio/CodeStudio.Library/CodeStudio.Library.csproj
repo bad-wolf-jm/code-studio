@@ -79,9 +79,6 @@
     <Compile Update="Controls\CodeEditorControl\CodeEditorControl.axaml.cs">
       <DependentUpon>CodeEditorControl.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\PrettyFilePath.axaml.cs">
-      <DependentUpon>PrettyFilePath.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\TreeViewControl.axaml.cs">
       <DependentUpon>TreeViewControl.axaml</DependentUpon>
     </Compile>

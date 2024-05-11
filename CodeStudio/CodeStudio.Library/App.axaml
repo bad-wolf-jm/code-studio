@@ -43,8 +43,6 @@
   <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/CodeEditorControl.axaml" />
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/ExpanderButton.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/MaterialIcon.axaml" />-->
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/NumberWithUnit.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />-->
   <StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />
@@ -57,8 +55,7 @@
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OlmPhysicalEventListControl.axaml" />
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OlmSinglePulseTraceListControl.axaml" />
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OtdrPhysicalEventListControl.axaml" />-->
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/PropertyValueControl.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TitleFrame.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />-->
 
