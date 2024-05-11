@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 
-namespace Metrino.Development.Studio.Library.Controls;
+namespace ToolKit.UI.Controls;
 
 public class TitleFrame : ContentControl
 {

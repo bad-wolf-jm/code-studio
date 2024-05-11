@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800"
              x:CompileBindings="False"
-             xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
+             xmlns:controls="clr-namespace:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
              x:Class="Metrino.Development.Studio.Library.GitBranchSelectorOverlay">
   <Grid RowDefinitions="35,*"  Width="1000" Height="800">
     <Border  Grid.Row="0" Background="Black" BorderThickness="2" CornerRadius="3" BorderBrush="Gray" Padding="0,6,0,0" Height="35">

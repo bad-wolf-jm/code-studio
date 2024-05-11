@@ -57,6 +57,7 @@
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/CustomCodeEditorControl.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/PlotControl.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/TreeViewControl.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/TitleFrame.axaml" />
   <!--<StyleInclude Source="avares://ToolKit.UI.Controls/TreeView/FileTreeView.axaml" />-->
   <!--Metrino specific controls-->
   <!--<StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkElementDisplay.axaml" />
@@ -79,4 +80,6 @@
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/GridSplitter.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/NotificationCard.axaml" />
   <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/VisibilityToggle.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/GitBranchTag.axaml" />
+
 </Styles>

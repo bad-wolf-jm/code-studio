@@ -59,8 +59,7 @@
   <StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/OtdrPhysicalEventListControl.axaml" />-->
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PropertyValueControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/TitleFrame.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/GitBranchTag.axaml" />
+  <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TitleFrame.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/CodeSnippet.axaml" />-->
 
 

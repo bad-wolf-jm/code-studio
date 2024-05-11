@@ -82,12 +82,6 @@
     <Compile Update="Controls\PrettyFilePath.axaml.cs">
       <DependentUpon>PrettyFilePath.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\GitBranchTag.axaml.cs">
-      <DependentUpon>GitBranchTag.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\TitleFrame.axaml.cs">
-      <DependentUpon>TitleFrame.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\TreeViewControl.axaml.cs">
       <DependentUpon>TreeViewControl.axaml</DependentUpon>
     </Compile>

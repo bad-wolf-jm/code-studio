@@ -21,31 +21,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ControlCode\CustomCodeEditorControl.axaml.cs">
+    <Compile Update="Controls\CustomCodeEditorControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="ControlCode\ExpanderButton.axaml.cs">
+    <Compile Update="Controls\ExpanderButton.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="ControlCode\MaterialIcon.axaml.cs">
+    <Compile Update="Controls\MaterialIcon.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="ControlCode\TextHighlightControl.axaml.cs">
+    <Compile Update="Controls\TextHighlightControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="ControlCode\PlotControl.axaml.cs">
+    <Compile Update="Controls\PlotControl.axaml.cs">
       <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\TitleFrame.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\GitBranchTag.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="TreeView\FileTreeView.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="ControlCode\TreeViewControl.axaml.cs">
+    <Compile Update="Controls\TreeViewControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -94,10 +100,6 @@
     <None Update="TreeView\TreeViewControl.axaml">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controls\" />
   </ItemGroup>
 
 </Project>
