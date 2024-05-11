@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:cc="using:Metrino.Development.Studio.Library.Controls"
+                    xmlns:tk_controls="using:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
                     x:ClassModifier="public">
 
   <ControlTheme x:Key="{x:Type cc:CompletionListItems}" TargetType="cc:CompletionListItems">
