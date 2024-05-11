@@ -45,18 +45,18 @@
 
   <!--Primitive controls-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/CodeEditorControl.axaml" />-->
-  <StyleInclude Source="avares://ToolKit.UI.Controls/Controls/ExpanderButton.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/ExpanderButton.axaml" />
 
-  <StyleInclude Source="avares://ToolKit.UI.Controls/Controls/MaterialIcon.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/MaterialIcon.axaml" />
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/NumberWithUnit.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />-->
   <!--<StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />-->
-  <StyleInclude Source="avares://ToolKit.UI.Controls/Controls/TextHighlightControl.axaml" />
-  <StyleInclude Source="avares://ToolKit.UI.Controls/CodeEditor/CustomCodeEditorControl.axaml" />
-  <StyleInclude Source="avares://ToolKit.UI.Controls/Plots/PlotControl.axaml" />
-  <StyleInclude Source="avares://ToolKit.UI.Controls/TreeView/TreeViewControl.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/TextHighlightControl.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/CustomCodeEditorControl.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/PlotControl.axaml" />
+  <StyleInclude Source="avares://ToolKit.UI.Controls/Styles/TreeViewControl.axaml" />
   <!--<StyleInclude Source="avares://ToolKit.UI.Controls/TreeView/FileTreeView.axaml" />-->
   <!--Metrino specific controls-->
   <!--<StyleInclude Source="avares://Metrino.Development.Studio.Library/Controls/LinkElementDisplay.axaml" />

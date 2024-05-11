@@ -21,23 +21,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CodeEditor\CustomCodeEditorControl.axaml.cs">
+    <Compile Update="ControlCode\CustomCodeEditorControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Controls\ExpanderButton.axaml.cs">
+    <Compile Update="ControlCode\ExpanderButton.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Controls\MaterialIcon.axaml.cs">
+    <Compile Update="ControlCode\MaterialIcon.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Controls\TextHighlightControl.axaml.cs">
+    <Compile Update="ControlCode\TextHighlightControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Plots\PlotControl.axaml.cs">
+    <Compile Update="ControlCode\PlotControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -45,7 +45,7 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="TreeView\TreeViewControl.axaml.cs">
+    <Compile Update="ControlCode\TreeViewControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -94,6 +94,10 @@
     <None Update="TreeView\TreeViewControl.axaml">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
 
 </Project>
