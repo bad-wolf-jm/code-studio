@@ -5,7 +5,7 @@
              xmlns:view_models="clr-namespace:Metrino.Development.UI.ViewModels;assembly=Metrino.Development.UI.ViewModels"
              xmlns:lib_view_models="using:Metrino.Development.Studio.Library.ViewModels"
              xmlns:controls="clr-namespace:Metrino.Development.Studio.Library.Controls"
-             xmlns:basic_controls="clr-namespace:Metrino.Development.Studio.Library.Controls;assembly=ToolKit.UI.Controls"
+             xmlns:basic_controls="clr-namespace:ToolKit.UI.Controls;assembly=ToolKit.UI.Controls"
              xmlns:converters="clr-namespace:Metrino.Development.Studio.Library.Converters"
              mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
              x:Class="Metrino.Development.Studio.Library.SettingsDocumentView">
