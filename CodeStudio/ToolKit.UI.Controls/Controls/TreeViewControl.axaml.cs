@@ -4,14 +4,12 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.LogicalTree;
 using Avalonia.Threading;
-using CommunityToolkit.Mvvm.ComponentModel;
 using Metrino.Development.UI.Core;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Input;
-using Metrino.Development.UI.ViewModels;
 
 using TreeViewItem = Metrino.Development.UI.ViewModels.TreeViewItem;
 

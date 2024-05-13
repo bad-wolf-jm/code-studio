@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\CustomCodeEditorControl.axaml.cs">
+    <Compile Update="CodeEditor\CustomCodeEditorControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -37,7 +37,7 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Controls\PlotControl.axaml.cs">
+    <Compile Update="Plots\PlotControl.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

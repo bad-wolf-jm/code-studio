@@ -1,5 +1,4 @@
 ﻿using Avalonia.Media;
-using System.Collections.Generic;
 
 namespace ToolKit.UI.Controls;
 

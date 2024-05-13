@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls.Notifications;
-using System;
 
 namespace Metrino.Development.Studio.Design;
 

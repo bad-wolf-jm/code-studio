@@ -8,12 +8,8 @@ using ScottPlot;
 using ScottPlot.Avalonia;
 
 using Metrino.Development.Core;
-using Metrino.Development.UI.Core;
-using System;
 using System.ComponentModel;
 using System.Collections.Specialized;
-using System.Collections.Generic;
-using System.Linq;
 using ScottPlot.Plottable;
 
 namespace ToolKit.UI.Controls;

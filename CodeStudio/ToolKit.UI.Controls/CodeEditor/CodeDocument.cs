@@ -1,11 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Metrino.Development.Core.TreeSitter;
-using Avalonia.Platform;
-using System.Diagnostics;
-//using System.Windows.Media;
 
 namespace ToolKit.UI.Controls;
 

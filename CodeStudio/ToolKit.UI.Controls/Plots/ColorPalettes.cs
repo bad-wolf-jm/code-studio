@@ -1,4 +1,6 @@
-namespace Metrino.Development.Core.Palettes;
+using Metrino.Development.Core;
+
+namespace ToolKit.UI.Controls;
 
 public class Category10
 {
