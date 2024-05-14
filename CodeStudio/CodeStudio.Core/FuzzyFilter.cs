@@ -40,19 +40,12 @@ public partial class FuzzyFilter<T> : ObservableObject where T : IFilterable, ne
             if (FilterText == "")
             {
                 foreach (var entry in List)
-                {
-                    FilteredList.Add(new FilterListItem<T>
-                    {
-                        Value = entry
-                    });
-                }
+                    FilteredList.Add(new FilterListItem<T> { Value = entry });
 
                 return;
             }
 
             var list = List.Where(x => FuzzySearch.HasMatch(FilterText, x.SearchKey));
-            int index = 0;
-            var textHighlights = new List<TextSpan>();
             var filterResults = new List<Tuple<double, T, List<TextSpan>>>();
             foreach (var element in List)
             {
@@ -61,21 +54,14 @@ public partial class FuzzyFilter<T> : ObservableObject where T : IFilterable, ne
                 if (score > 0.0)
                 {
                     var textSpans = FuzzySearch.PositionsToSpans(element.SearchKey, positions);
-                    var info = element;
                     filterResults.Add(new Tuple<double, T, List<TextSpan>>(score, element, textSpans));
                 }
-
-                index++;
             }
 
             var orderedFilteredResults = filterResults.OrderBy(x => x.Item1).Reverse();
 
             foreach (var x in orderedFilteredResults)
-                FilteredList.Add(new FilterListItem<T>
-                {
-                    Value = x.Item2,
-                    TextSpans = x.Item3
-                });
+                FilteredList.Add(new FilterListItem<T> { Value = x.Item2, TextSpans = x.Item3 });
         }
     }
 }
