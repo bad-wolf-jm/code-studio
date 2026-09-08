@@ -287,7 +287,7 @@ public partial class TreeViewControl : TemplatedControl
             EndBulkInsertion();
 
             SelectedIndex = 0;
-            SelectedItem = DisplayedItems[0].Data;
+            //SelectedItem = DisplayedItems[0].Data;
         }
     }
 

@@ -33,13 +33,13 @@ public class ApplicationModel
         {
             var defaultConfig = new Configuration
             {
-                OtdrRepositoryPath = @"D:\Work\Git\OTDR",
-                OtdrBuildPath = @"D:\Work\Build\Lib",
-                OtdrBuildConfiguration = @"Debug",
-                OtdrTargetFramework = @"net48",
-                LocalTestDataBank = @"D:\Work\Data\AutomatedTests",
-                RemoteTestDataBank = @"\\exfo.com\OpticMeasurement\OTDR\iOLM\AutomatedTests",
-                UnitTestXmlRoot = @"D:\Work\Git\OTDR\UnitTestOlm\TestData",
+                OtdrRepositoryPath = @"C:\gitlab\psr",
+                OtdrBuildPath = @"C:\gitlab\psr\Build\Debug",
+                OtdrBuildConfiguration = @"",
+                OtdrTargetFramework = @"",
+                LocalTestDataBank = @"",
+                RemoteTestDataBank = @"",
+                UnitTestXmlRoot = @"",
                 WorkspaceFolders = new List<string>()
             };
             defaultConfig.WriteTo(configurationPath);
