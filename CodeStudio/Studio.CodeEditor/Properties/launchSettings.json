@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Studio.Library": {
+      "commandName": "Project",
+      "hotReloadEnabled": true
+    }
+  }
+}

@@ -1,4 +1,4 @@
-﻿using Metrino.Development.Core.TreeSitter;
+﻿using Core.TreeSitter;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
 
