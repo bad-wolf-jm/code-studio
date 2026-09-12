@@ -21,7 +21,7 @@
         Height="1080"
         Background="Transparent"
         TransparencyBackgroundFallback="Transparent"
-        FontFamily="JetBrainsMono Nerd Font, Cascadia Code,Consolas,Menlo,Monospace"
+        FontFamily="Segoe UI"
         FontSize="12"
         Icon="/Assets/avalonia-logo.ico"
         Title="Metrino">

@@ -33,8 +33,8 @@ public class ApplicationModel
         {
             var defaultConfig = new Configuration
             {
-                OtdrRepositoryPath = @"C:\gitlab\psr",
-                OtdrBuildPath = @"C:\gitlab\psr\Build\Debug",
+                OtdrRepositoryPath = @"C:\Users\jmalb\source",
+                OtdrBuildPath = @"C:\Users\jmalb\source",
                 OtdrBuildConfiguration = @"",
                 OtdrTargetFramework = @"",
                 LocalTestDataBank = @"",

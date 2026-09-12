@@ -11,13 +11,11 @@
   </Styles.Resources>
 
   <Style Selector="controls|MaterialIcon">
-    <!--<Setter Property="Height" Value="{TemplateBinding Height}" />
-    <Setter Property="Width" Value="{TemplateBinding Width}" />-->
     <Setter Property="Template">
       <ControlTemplate>
         <Border Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}">
+                BorderThickness="{TemplateBinding BorderThickness}" VerticalAlignment="Center">
           <Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
             <Canvas Width="25" Height="25" >
               <Path Data="{TemplateBinding Kind, Converter={StaticResource GeometryConverter}}"

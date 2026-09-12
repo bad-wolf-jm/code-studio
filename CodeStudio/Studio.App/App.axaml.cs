@@ -33,7 +33,7 @@ public partial class App : Application
             BindingPlugins.DataValidators.RemoveAt(0);
 
             //var userConfig = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var userConfig = @"D:\Work\AppData";
+            var userConfig = @"C:\Work\AppData";
             var appConfigRoot = Path.Combine(userConfig, "OlmDevTool");
             var appConfig = UI.Core.Utilities.CreateFolder(new string[] { appConfigRoot, "Config" });
             var appData = UI.Core.Utilities.CreateFolder(new string[] { appConfigRoot, "Data" });
