@@ -76,9 +76,9 @@
     <Compile Update="Controls\CodeEditorControl\CodeEditorControl.axaml.cs">
       <DependentUpon>CodeEditorControl.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\PlotControl.axaml.cs">
+    <!-- <Compile Update="Controls\PlotControl.axaml.cs">
       <DependentUpon>PlotControl.axaml</DependentUpon>
-    </Compile>
+    </Compile> -->
     <Compile Update="Controls\ExpanderButton.axaml.cs">
       <DependentUpon>ExpanderButton.axaml</DependentUpon>
     </Compile>

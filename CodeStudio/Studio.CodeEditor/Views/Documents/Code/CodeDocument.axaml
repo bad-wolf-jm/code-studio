@@ -66,7 +66,7 @@
               </ItemsControl>
             </Grid>
             <GridSplitter Grid.Column="1" Background="Gray" ResizeDirection="Columns" Width="1" BorderThickness="0" MinWidth="1"/>
-            <controls:PlotControl Grid.Column="2" Title="Hello" XAxisTitle="Distance (km)" YAxisTitle="Power (dB)" PlotElementSource="{Binding Plots}"/>
+            <!-- <controls:PlotControl Grid.Column="2" Title="Hello" XAxisTitle="Distance (km)" YAxisTitle="Power (dB)" PlotElementSource="{Binding Plots}"/> -->
           </Grid>
         </TabItem>
         <TabItem Header="OUTPUT" FontSize="12" Height="25" Margin="0" Padding="0">
