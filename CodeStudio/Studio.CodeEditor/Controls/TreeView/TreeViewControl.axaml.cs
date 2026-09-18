@@ -137,7 +137,6 @@ public partial class TreeViewControl : TemplatedControl
 
         if (SelectedIndex >= 0 && SelectedIndex < DisplayedItems.Count)
             SelectedItem = DisplayedItems[SelectedIndex].Data;
-
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -158,7 +157,7 @@ public partial class TreeViewControl : TemplatedControl
     Point _dragOrigin = new Point(0, 0);
     private void _internalDataGrid_PointerMoved(object? sender, PointerEventArgs e)
     {
-        if ( _elementToDrag != null)
+        if (_elementToDrag != null)
         {
             var moveVector = e.GetCurrentPoint(sender as Control).Position - _dragOrigin;
             var moveDistance = moveVector.X * moveVector.X + moveVector.Y * moveVector.Y;
@@ -279,14 +278,29 @@ public partial class TreeViewControl : TemplatedControl
 
         if (args.NewValue is ObservableCollection<ITreeNode> treeRoots)
         {
-            BeginBulkInsertion();
+            if (treeRoots == null)
+            {
+                PseudoClasses.Add(":isempty");
+                return;
+            }
 
-            foreach (var root in treeRoots)
-                DisplayedItems.Add(CreateTreeViewItem(true, 0, root));
+            if (treeRoots.Count > 0)
+            {
+                BeginBulkInsertion();
 
-            EndBulkInsertion();
+                foreach (var root in treeRoots)
+                    DisplayedItems.Add(CreateTreeViewItem(true, 0, root));
 
-            SelectedIndex = 0;
+                EndBulkInsertion();
+
+                SelectedIndex = 0;
+            }
+            else
+            {
+                PseudoClasses.Add(":isempty");
+                // ItemsSource.CollectionChanged += InitializeSelectedItem;
+            }
+            // ItemsSource.CollectionChanged += OnItemsSourceCollectionChanged;
         }
     }
 

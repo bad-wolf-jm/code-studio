@@ -28,6 +28,33 @@
         <Setter Property="Foreground" Value="#33e6e6e6" />
     </Style>
 
+    <Style Selector="controls|TreeViewControl:isempty">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Border
+                        DragDrop.AllowDrop="True"
+                        Background="Transparent">
+                        <Grid RowDefinitions="*,Auto,Auto,*">
+                            <Border
+                                Grid.Row="0"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Stretch" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Text="No folders opened"
+                                FontWeight="Bold"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Center"
+                                Margin="10"
+                                Foreground="SlateGray" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
     <Style Selector="controls|TreeViewControl">
         <Setter Property="Template">
             <ControlTemplate>
@@ -55,8 +82,10 @@
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate DataType="{x:Type ViewModels:ITreeViewItem}">
-                                    <Grid ColumnDefinitions="Auto,Auto,*,Auto"
-                                        Margin="{Binding Level, Converter={StaticResource TreeLevelToMarginConverter}}">
+                                    <Grid
+                                        ColumnDefinitions="Auto,Auto,*,Auto"
+                                        Margin="{Binding Level,
+                                        Converter={StaticResource TreeLevelToMarginConverter}}">
                                         <controls:ExpanderButton
                                             Grid.Column="0"
                                             Width="15"
@@ -93,14 +122,6 @@
                                             Margin="5,0"
                                             FontSize="12"
                                             Foreground="LightGray" />
-                                        <!-- <controls:MaterialIcon
-                                            Grid.Column="3"
-                                            Width="18"
-                                            Height="18"
-                                            Classes.Disabled="{Binding Disabled}"
-                                            Kind="ChevronRight"
-                                            IsVisible="{Binding !IsFolder}"
-                                            Foreground="MediumAquamarine" /> -->
                                     </Grid>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -108,7 +129,8 @@
                             <DataGridTemplateColumn.CellEditingTemplate>
                                 <DataTemplate DataType="{x:Type ViewModels:ITreeViewItem}">
                                     <Grid ColumnDefinitions="Auto,Auto,*,Auto"
-                                        Margin="{Binding Level, Converter={StaticResource TreeLevelToMarginConverter}}">
+                                        Margin="{Binding Level,
+                                          Converter={StaticResource TreeLevelToMarginConverter}}">
                                         <controls:ExpanderButton
                                             Grid.Column="0"
                                             Width="15"

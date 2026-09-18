@@ -47,8 +47,14 @@ public class ApplicationModel
 
         _configuration.ReadFrom(configurationPath);
 
+        if (_configuration.WorkspaceFolders == null)
+        {
+            _configuration.WorkspaceFolders = new List<string>();
+        }
+
         foreach (var folder in _configuration.WorkspaceFolders)
             _fileSystem.AddRootFolder(folder);
+
 
         //_serviceProvider = new BackendServiceProvider(_configuration.OtdrBuildPath, _configuration.OtdrBuildConfiguration, _configuration.OtdrTargetFramework);
         //_database = new LiteDatabase(Path.Combine(dataPath, "database.db"));
