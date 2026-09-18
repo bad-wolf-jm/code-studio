@@ -9,9 +9,6 @@ public class FilenameToIconConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        //if (value == null)
-        //    return Color.FromArgb(0, 0, 0, 0);
-
         var p = value as string;
         if (p == null) return null;
 
