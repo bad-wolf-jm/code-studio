@@ -112,7 +112,7 @@ public partial class FileTreeViewModel : TreeViewModel<FileTreeElement>
         if (data == null)
             return false;
 
-        var allowedExtensions = new string[] { ".lua", ".iolm", ".olx", ".trcx", ".trc", ".olmtest" };
+        var allowedExtensions = new string[] { ".adf", ".cs", ".cpp", ".h" };
 
         return allowedExtensions.Contains(Path.GetExtension(data.Name));
     }
