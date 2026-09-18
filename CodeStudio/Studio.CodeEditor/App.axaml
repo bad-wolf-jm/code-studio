@@ -37,13 +37,13 @@
 
   <!--Primitive controls-->
   <StyleInclude Source="avares://CodeStudio.Library/Controls/CodeEditorControl/CodeEditorControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/ExpanderButton.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Library/Controls/TreeView/ExpanderButton.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Library/Controls/TreeView/TreeViewControl.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/MaterialIcon.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/NumberWithUnit.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PrettyFilePath.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/PlotControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/TreeViewControl.axaml" />
-  <StyleInclude Source="avares://CodeStudio.Library/Controls/WorkspaceControl.axaml" />
+  <StyleInclude Source="avares://CodeStudio.Library/Controls/Workspace/WorkspaceControl.axaml" />
   <StyleInclude Source="avares://CodeStudio.Library/Controls/TextHighlightControl.axaml" />
 
   <!--Metrino specific controls-->
